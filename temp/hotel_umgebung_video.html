@@ -1,0 +1,34 @@
+<?php
+	if(startsWith($filename, 'hotel'))
+		$active_page = "hotel";
+	if(startsWith($filename, 'kuehlungsborn-und-umgebung'))
+		$active_page = "umgebung";
+		
+	include($home_dir."temp/html/nav.html");
+?>
+
+<div id="content">
+	<div id="content_left" class="closed">
+	<h1 data-cmstype="wrapper" data-cmscat="Überschrift"><span data-cmstype="text_short" data-cmspos="headline<?=$cms_row["ID"];?>"><?=${"headline".$cms_row["ID"]};?></span></h1>
+		
+		<div id="nav2">
+			<?php include($home_dir."temp/html/nav2.html"); ?>
+		</div>
+		
+		<div id="hotel">
+			
+			<div class="yt_video" data-cmstype="wrapper" data-cmscat="Text">
+				<div class="description_article cms_edit" data-cmstype="text_long" data-cmspos="article<?=$cms_row["ID"];?>"><?=${"article".$cms_row["ID"]};?></div>
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+<div id="wrapper_bg" data-cmstype="wrapper" data-cmscat="Hintergrund">
+	<div id="wrapper_bg_element" data-cmspos="wrapper_bg_<?=$active_page;?>" data-cmstype="img" data-cmsglobal="1" data-cms_img_align="cover_center"><?php cms_load_img(${"wrapper_bg_".$active_page}, 0, 0, "") ?></div>
+</div>
+
+<div id="footer">
+	<?php include($home_dir."temp/html/footer.html"); ?>
+</div>

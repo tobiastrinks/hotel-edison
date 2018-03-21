@@ -1,0 +1,295 @@
+<?php 
+	
+	$show_desktop_version = "";
+	
+	if(isset($_GET["showDesktopVersion"])){
+		if($_GET["showDesktopVersion"] == "true")
+			$show_desktop_version = "?showDestopVersion=true";
+	}
+	
+	if(isset($_POST["buchungstyp"])){
+	
+	$buchungstyp	= $_POST["buchungstyp"];
+	
+
+	$anreise		= $_POST["anreise"];
+	if($buchungstyp != "arr")
+		$abreise	= $_POST["abreise1"];
+	else
+		$abreise	= $_POST["abreise2"];
+		
+		
+	$zimmertyp		= $_POST["zimmertyp"];
+	$btype = array (
+		"uf" => "&Uuml;bernachtung mit Fr&uuml;hst&uuml;ck",
+		"hp" => "Halbpension",
+		"arr" => "Arrangements"
+	); 
+	
+	$reiseteilnehmer_erw	= $_POST["reiseteilnehmer_erw"];
+	$reiseteilnehmer_kin1	= $_POST["reiseteilnehmer_kin1"];
+	$reiseteilnehmer_kin2	= $_POST["reiseteilnehmer_kin2"];
+	$reiseteilnehmer_kin3	= $_POST["reiseteilnehmer_kin3"];
+	
+	
+	if(isset($_POST["zusatzleistungen_gar"]))
+		$zusatzleistungen_gar = $_POST["zusatzleistungen_gar"];
+	else
+		$zusatzleistungen_gar = "nein";
+		
+	if(isset($_POST["zusatzleistungen_haustier"]))
+		$zusatzleistungen_haustier = $_POST["zusatzleistungen_haustier"];
+	else
+		$zusatzleistungen_haustier = "nein";
+	
+	$anmerkungen			= $_POST["anmerkungen"];
+	
+	
+//Pers&ouml;nliche Daten
+	
+	$anrede 	= $_POST["anrede"];
+	if($anrede 	== "Herr")
+		$anrede_email = "Sehr geehrter Herr ";
+	if($anrede 	== "Frau")
+		$anrede_email = "Sehr geehrte Frau ";
+	
+	$vname			= $_POST["vname"];
+	$nname			= $_POST["nname"];
+	$anrede_email  .= $nname;
+	
+	$strasse	= $_POST["strasse"];
+	$strasse_nr	= $_POST["strasse_nr"];
+	$plz		= $_POST["plz"];
+	$ort		= $_POST["ort"];
+	
+	$land		= $_POST["land"];
+	$email		= $_POST["email"];
+	$telefon	= $_POST["telefon"];
+	
+	
+	$mailtext = '<html>
+<head itemscope itemtype="http://schema.org/WebSite">
+<meta charset="utf-8">
+<title itemprop="name">Vielen Dank f&uuml;r Ihre Anfrage im Hotel Edison.</title>
+</head>
+<body>
+<table align="center"><tr><td>
+<div width="900" style="padding-left: 200px; padding-bottom: 10px;">
+<table>
+<tr>
+<td><img src="http://hotel-edison.de/temp/media/basic/email_sonne.png" width="50px"></td>
+<td><p style="font-size: 25px;">Vielen Dank. Wir haben Ihre Anfrage erhalten.</p></td>
+</tr>
+</table>
+</div>
+<div style="padding: 10px; padding-left: 20px;">
+<table width="900px" border="0" cellspacing="0" style="border-left: 2px solid #0099a1; border-right: 2px solid #0099a1; margin: 0;">
+<tr>
+<td style="padding: 20px;" valign="top">
+<div style="padding-bottom: 50px;">
+<table width="100%">
+<tr>
+<td>
+<p>
+' . $anrede_email . ',<br><br>
+wir freuen uns &uuml;ber Ihre Buchungsanfrage im Hotel Edison K&uuml;hlungsborn.<br>
+Schnellstm&ouml;glich werden wir uns bei Ihnen mit einem Angebot melden.<br><br>
+Mit freundlichen Gr&uuml;&szlig;en,<br><br><br>
+Ihr Hotel Edison K&uuml;hlungsborn.</p>
+</td>
+<td style="text-align: right;" valign="top">
+<img src="http://hotel-edison.de/temp/media/basic/email_logo.png" width="200px">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-top: 1px dotted black; padding: 10px;">
+<table cellspacing="0" width="100%">
+<tr>
+<td>Hotel Edison GmbH</td>
+<td style="padding-left: 10px;">Telefon: 038293 / 42-0</td>
+<td style="padding-left: 10px;">Hotel Edison GmbH © 2014</td>
+</tr>
+<tr>
+<td>D&uuml;nenstra&szlig;e 15</td>
+<td style="padding-left: 10px;">Telefax: 038293 / 42-111</td>
+<td style="padding-left: 10px;"></td>
+</tr>
+<tr>
+<td>18225 Ostseebad K&uuml;hlungsborn</td>
+<td style="padding-left: 10px;">E-Mail: info@hotel-edison.de</td>
+<td style="padding-left: 10px;"></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td></tr></table>
+</body>
+</html>
+	';
+	$empfaenger = $email; //Mailadresse
+	$absender   = "noreply@hotel-edison.de";
+	$betreff    = "Hotel Edison Kühlungsborn - Buchungsanfrage";
+	$antwortan  = "info@hotel-edison.de";
+	 
+/*
+	$header  = "MIME-Version: 1.0\r\n";
+	$header .= "Content-type: text/html; charset=utf-8; Content-Transfer-Encoding: quoted-printable\r\n";
+	 
+	$header .= "From: $absender\r\n";
+	$header .= "Reply-To: $antwortan\r\n";
+	$header .= "X-Mailer: PHP ". phpversion();
+	 
+	mail( $empfaenger,
+
+		  $betreff,
+		  $mailtext,
+		  $header);
+*/
+// Mail server data
+$server_mail_host		= "mail.hotel-edison.de";
+$server_mail_imap_port	= 25;
+$server_mail_pop3_port	= 110;
+$server_mail_pop3_intv	= 30;
+$server_mail_username	= "info@hotel-edison.de";
+$server_mail_password	= "iU9wb!98";
+
+// include required files
+require_once ("../phpmailer/class.phpmailer.php");
+require_once ("../phpmailer/class.pop3.php"); // required for POP before SMTP
+
+// initiate POP before SMTP with POP auth first
+$pop = new POP3 ();
+$pop -> Authorise ($server_mail_host, $server_mail_pop3_port, $server_mail_pop3_intv, $server_mail_username, $server_mail_password, 1);
+
+// start the mailer and login with smtp
+$mail = new PHPMailer ();
+$mail -> IsSMTP ();
+$mail -> IsHTML (true);
+$mail -> Host = $server_mail_host;
+$mail -> Username = $server_mail_username;
+$mail -> Password = $server_mail_password;
+$mail -> Port = $server_mail_imap_port;
+$mail -> SMTPAuth = true;
+$mail -> SMTPDebug = 0;
+ 
+
+// clear recipients and replytos
+$mail -> ClearAddresses ();
+$mail -> ClearReplyTos ();
+
+// form the mail
+$mail -> AddAddress ($empfaenger);
+$mail -> AddReplyTo ($antwortan);
+$mail -> AltBody = strip_tags (str_replace ("<br>", "\n", $mailtext));
+$mail -> Body = $mailtext;
+$mail -> From = "info@hotel-edison.de";
+$mail -> FromName = "Hotel Edison";
+$mail -> Subject = $betreff;
+
+// send the mail and clear recipients and replytos
+$mail -> Send ();
+$mail -> ClearAddresses ();
+$mail -> ClearReplyTos ();
+
+
+	$empfaenger = /*"mr@astrotel.net";*/"info@hotel-edison.de";
+	$absender   = "anfrage.client@hotel-edison.de";
+	$betreff    = "Buchungsanfrage";
+	$antwortan  = $email;
+	/*
+	$header  = "From: $absender\r\n";
+	$header .= "Reply-To: $antwortan\r\n";
+	*/
+	$mailtext 	= "
+<html>
+<head itemscope itemtype='http://schema.org/WebSite'>
+<meta charset='utf-8'>
+<title itemprop='name'>Buchungsanfrage von der Webseite</title>
+</head>
+<body>
+Buchungsanfrage
+<br><br>
+Name: " . $anrede . " " . $vname . " " . $nname . "<br>
+<br>
+" . $strasse . ", " . $strasse_nr . "<br>
+" . $plz . ", " . $ort . "<br>
+" . $land . "<br>
+<br>
+E-Mail: " . $email . "<br>
+Telefon: " . $telefon . "<br>
+<br>
+<br>
+Buchungsdaten:<br>
+<br>
+Buchungstyp: " . $btype [$buchungstyp] . "<br>
+Zeitraum: " . $anreise . " - " . $abreise . "<br>
+Zimmertyp: " . $zimmertyp . "<br>
+<br>
+Reiseteilnehmer:<br>
+" . $reiseteilnehmer_erw . " Erwachsene (ab 12)<br>
+" . $reiseteilnehmer_kin1 . " Kinder (0-2)<br>
+" . $reiseteilnehmer_kin2 . " Kinder (3-5)<br>
+" . $reiseteilnehmer_kin3 . " Kinder (6-11)<br>
+<br>
+Zusatzleistungen:<br>
+Stellplatz: " . $zusatzleistungen_gar . "<br>
+Haustier: " . $zusatzleistungen_haustier . "<br>
+<br>
+Anmerkungen:<br>
+" . str_replace ("\n", "<br>", $anmerkungen) . "<br>
+</body>
+</html>
+";
+/*
+	mail( $empfaenger,
+		  $betreff,
+		  $mailtext,
+		  $header);
+*/
+
+
+// clear recipients and replytos
+$mail -> ClearAddresses ();
+$mail -> ClearReplyTos ();
+
+// form the mail
+$mail -> AddAddress ($empfaenger);
+$mail -> AddReplyTo ($antwortan);
+$mail -> AltBody = strip_tags (str_replace ("<br>", "\n", $mailtext));
+$mail -> Body = $mailtext;
+$mail -> From = "info@hotel-edison.de";
+$mail -> FromName = "Hotel Edison";
+$mail -> Subject = $betreff;
+
+// send the mail and clear recipients and replytos
+$mail -> Send ();
+$mail -> ClearAddresses ();
+$mail -> ClearReplyTos ();
+
+?>
+<!-- Google Code for Anfragen Conversion Page -->
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 962776526;
+var google_conversion_language = "de";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "d9s6CIaDkGgQzpuLywM";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+
+<?php } ?>
+
+<script type="text/javascript">
+	
+	window.location = "../../anfrage-kuehlungsborn-ostsee-confirm.html";
+	
+</script>

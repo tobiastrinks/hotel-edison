@@ -1,0 +1,28 @@
+#kontaktinformationen > div{
+	float: left;
+	margin-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.kontakt_click{
+	color: #00c4d0;
+}
+#google_maps{
+	width: 95%;
+}
+#google_maps iframe{
+	width: 100%;
+}
+#anfrage_confirm_h1{
+	text-align: center;
+	margin-bottom: 20px;
+}
+#anfrage_confirm_text{
+	font-size: 18px;
+	text-align: center;
+}
+#anfrage_confirm_text a{
+	font-size: 20px;
+	color: #00c4d0;
+	text-decoration: underline;
+}

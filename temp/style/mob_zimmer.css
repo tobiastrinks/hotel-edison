@@ -1,0 +1,175 @@
+h1{
+	text-align: center;
+}
+
+dl{
+	margin-top: 20px;
+	width: 100%;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+dt{
+	background-color: rgba(210,197,127,0.2);
+	border-radius: 10px;
+	width: 100%;
+	padding-left: 60px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	box-sizing: border-box;
+	position: relative;
+	margin-top: 10px;
+}
+dt:hover{
+	cursor: pointer;
+}
+dt .sonne{
+	display: none;
+}
+dt img{
+	position: absolute;
+	top: 3px;
+	left: 5px;
+}
+dt a{
+	font-size: 22px;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.zimmer_head_new {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #019fae;
+}
+
+dd{
+	background-color: rgba(210,197,127,0.2);
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 0 0 10px 10px;
+	border-top: 1px solid #d2c57f;
+}
+dd.closed{
+	display: none;
+}
+.zimmer_nav{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.zimmer_nav ul{
+	width: 100%;
+	text-align: left;
+}
+.zimmer_nav ul li{
+	display: inline;
+	text-decoration: none;
+	list-style-type: none;
+	padding-right: 30px;
+	margin-left: 0;
+}
+.zimmer_nav_button{
+	color: #00c4d0;
+}
+.zimmer_nav_button:hover{
+	cursor: pointer;
+}
+.zimmer_nav_button.active{
+	font-weight: bold;
+}
+.zimmerbilder_button{
+	font-weight: bold;
+}
+.grundriss, .preise{
+	display: none;
+}
+
+.zimmerbilder, .grundriss{
+	width: 90%;
+	overflow: hidden;
+	position: relative;
+}
+.zimmerbilder img, .grundriss img{
+	width: 100%;
+}
+
+
+
+.preise{
+	padding: 5px;
+}
+.preise_cols{
+	float: left;
+	width: 100%;
+	max-width: 210px;
+	margin-top: 20px;
+}
+.preise_cols:first-child{
+	margin-right: 40px;
+}
+.preise p{
+	text-decoration: underline;
+	float: left;
+}
+.preise p.jahr{
+	float: none;
+	margin: 0px;
+	padding: 0px;
+	font-size: 17px;
+	color: #000;
+	text-decoration: none;
+}
+.preise p.jahr span{
+	text-decoration: none;
+}
+.preise p.jahr span.active{
+	font-weight: bold;
+	text-decoration: underline;
+}
+.preisfeld{
+	display: none;
+}
+.preisfeld.active{
+	display: block;
+}
+
+.preise table{
+	border-collapse: collapse;
+	width: 100%;
+}
+.preise td{
+	padding-right: 25px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-bottom: 1px dotted #d2c57f;
+}
+.buchungsanfrage_button{
+	margin-right: 20px;
+	font-weight: bold;
+}
+
+#buchungsinformationen{
+	display: none;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+#buchungsinformationen .content_dialog{
+	padding: 20px;
+	overflow-x: auto;
+}
+#buchungsinformationen li{
+	padding: 5px;
+	margin-left: 20px;
+	list-style-image: url(../img/icons/stern.png);
+}
+
+#preise_linie{
+	height: 20px;
+}

@@ -1,0 +1,250 @@
+h1{
+	text-align: center;
+}
+#content_left{
+	background-position: 50% -180px;
+}
+
+.zimmer_head:hover{
+	cursor: pointer;
+}
+
+dl{
+	text-align: center;
+	margin-top: 60px;
+}
+
+dt{
+	position: relative;
+	background-color: rgba(210,197,127,0.2);
+	padding: 10px;
+	padding-right: 30px;
+	color: black;
+	margin-top: 20px;
+	border-radius: 10px;
+	height: 40px;
+}
+dd{
+	display:none;
+	background-color: rgba(210,197,127,0.2);
+	
+	margin: 0;
+	padding: 10px 10px 10px 30px;
+	padding-top: 10px;
+	border-radius: 0 0 10px 10px;
+	font-size: 20px;
+}
+dt img{
+	position: absolute;
+	top: 4px;
+	left: 5px;
+}
+dt a{
+	position: absolute;
+	top: 11px;
+	left: 65px;
+	font-size: 25px;
+	margin: 0;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.zimmer_head_new {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #019fae;
+}
+
+.sonne{
+	display: none;
+	z-index: 1;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.zimmer_nav{
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+.zimmer_nav ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.zimmer_nav li{
+	display: inline-block;
+}
+.zimmer_nav a{
+	color: #019fae;
+	text-decoration: none;
+	padding-right: 20px;
+}
+.zimmer_nav a:hover{
+	cursor: pointer;
+}
+.zimmer_nav_img{
+	position: relative;
+	width: 90%;
+	max-width: 500px;
+	display: none;
+	margin: 0px auto;
+}
+.zimmer_nav_img img{
+	width: 100%;
+}
+
+#zimmer{
+	position: relative;
+	width: 100%;
+}
+
+.zimmerbilder{
+	position: absolute;
+	top: 0;
+	right: 10%;
+	display: none;
+	overflow: hidden;
+	background-color: transparent;
+	min-width: 680px;
+	min-height: 476px;
+}
+.zimmerbilder img{
+	width: 100% !important;
+	height: auto !important;
+}
+#button_left, #button_right{
+	display: none;
+	z-index: 20;
+}
+
+.preistabelle{
+	position: absolute;
+	top: 0;
+	min-width: 680px;
+	z-index: 7;
+	display: none;
+	color: black;
+	background-color: rgba(210,197,127,0.2);
+	border-radius: 10px;
+	border: 1px solid #d2c57f;
+	overflow: hidden;
+}
+.preistabelle table{
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	border-radius: 10px;
+	border-bottom: 1px solid black;
+}
+.preistabelle table td{
+	padding: 8.5px;
+}
+.preistabelle table .table_head{
+	border-bottom: 2px solid black;
+}
+.preistabelle table p{
+	padding: 0;
+	margin: 0;
+}
+.preistabelle table .left_col{
+	text-align: left;
+}
+td[data-info='preistabelle_button']{
+	cursor: pointer;
+}
+td[data-info='preistabelle_button']:hover{
+	color: #019fae;
+}
+.preistabelle .monate{
+	font-size: 16px;
+	font-weight: bold;
+}
+.preistabelle .title{
+	font-weight: bold;
+	font-size: 19px;
+}
+.preistabelle .jahr{
+	padding: 0px;
+	margin: 5px 0px;
+	font-size: 17px;
+	color: #019fae;
+}
+.preistabelle .jahr span:hover{
+	cursor: pointer;
+}
+.preistabelle .jahr span.active{
+	font-weight: bold;
+}
+.preistabelle .preise{
+	display: none;
+}
+.preistabelle .preise.active{
+	display: block;
+}
+.preistabelle_bottom{
+	padding: 10px;
+	padding-right: 20px;
+}
+.preistabelle_bottom table{
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: left;
+}
+.preistabelle_bottom p{
+	text-align: right;
+	line-height: 30px;
+}
+.preistabelle_bottom a{
+	text-decoration: none;
+	color: #019fae;
+}
+.anfrage{
+	font-size: 20px;
+}
+.preistabelle_bottom a:hover{
+	font-weight: bold;
+}
+.close{
+	text-align: center;
+	margin: 0;
+	padding: 5px;
+	width: 100%;
+	border-top: 1px solid #d2c57f;
+}
+.close:hover{
+	cursor: pointer;
+	color: #019fae;
+}
+#buchungsinformationen{
+	display: none;
+}
+#buchungsinformationen_inner{
+	padding: 20px;
+	overflow-y: auto;
+}
+#buchungsinformationen table:first-child{
+	width: 100%;
+	margin-left: 0px !important;
+}
+#buchungsinformationen table:first-child tr td{
+	padding: 5px;
+	vertical-align: top;
+	width: 50%;
+}
+#buchungsinformationen table{
+	margin: 30px 0px;
+	margin-left: 20px;
+}
+#buchungsinformationen li{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	list-style-image: url(../media/basic/li_stern.png);
+}

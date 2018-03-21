@@ -1,0 +1,69 @@
+<div class="nav_2" data-cmstype="wrapper" data-cmscat="Navigation 2">
+						
+	<div id="active_page" class="nav_2_header">
+		<h1><span data-cmstype="text_short" data-cmspos="nav2_page<?=$cms_row["ID"];?>" data-cmsglobal="1"><?=${"nav2_page".$cms_row["ID"]};?></span> </h1><p><i class="fa fa-caret-down" aria-hidden="true"></i></p>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="nav_2_content" class="closed">
+		<ul>
+		
+			<?php
+				$filename_english_hidden = "'hotel-edison-feiern-und-tagen%','hotel-edison-aktuelles-bei-facebook%','kuehlungsborn-und-umgebung-kulturelle-angebote%'";
+				$filename_string = "";
+				
+				if($_SESSION["cms_lang"] == "eng"){
+					
+					$filename_english_hidden = explode(",", $filename_english_hidden);
+					
+					if(count($filename_english_hidden) > 0){
+						
+						$filename_string .= " (";
+						
+						for($x_nav2=0; $x_nav2<count($filename_english_hidden); $x_nav2++){
+							
+							$filename_string .= " filename NOT LIKE ".$filename_english_hidden[$x_nav2]." AND ";
+						}
+						$filename_string = substr($filename_string, 0, -4);
+						
+						$filename_string .= ") AND ";
+					}
+				}
+			
+				$ergebnis_nav2  = $mysqli->query("SELECT * FROM page WHERE ID=".$parent1."");
+				
+				if(mysqli_num_rows($ergebnis_nav2) > 0){
+					while($row_nav2 = $ergebnis_nav2->fetch_assoc()){
+						
+						echo'
+							<li>
+								<a href="'. $row_nav2["filename"] .' "'; if( $filename == $row_nav2["filename"] ) echo ' class="active"'; echo '>';
+								?> <span data-cmstype="text_short" data-cmspos="nav2_page<?=$row_nav2["ID"];?>" data-cmsglobal="1"><?=${"nav2_page".$row_nav2["ID"]};?></span> <?php
+								
+								echo '</a>
+							</li>
+						';
+					}
+				}
+				
+				
+				$ergebnis_nav2  = $mysqli->query("SELECT * FROM page WHERE ebene='2' AND pos!=-1 AND parent_page=".$parent1." AND visible='true' AND ".$filename_string." project_id='".$project_id."' ORDER BY pos");
+				
+				if(mysqli_num_rows($ergebnis_nav2) > 0){
+					while($row_nav2 = $ergebnis_nav2->fetch_assoc()){
+						
+						echo'
+							<li>
+								<a href="'. $row_nav2["filename"] .' "'; if( $filename == $row_nav2["filename"] ) echo ' class="active"'; echo '>';
+								?> <span data-cmstype="text_short" data-cmspos="nav2_page<?=$row_nav2["ID"];?>" data-cmsglobal="1"><?=${"nav2_page".$row_nav2["ID"]};?></span> <?php
+								
+								echo '</a>
+							</li>
+						';
+					}
+				}
+			?>
+		</ul>
+	</div>
+	
+</div>

@@ -1,0 +1,210 @@
+<div data-cmstype="wrapper" data-cmscat="Preistabelle">
+	<div id="hp" class="preistabelle" data-info="closed">	
+
+		<table>
+			
+			<tr class="table_head">
+				<td class="left_col">
+					<p class="title" data-cmstype="text_short" data-cmspos="preistabelle_hp"><?=$preistabelle_hp;?></p>
+					<span data-cmstype="text_short" data-cmspos="preistabelle_priceformat"><?=$preistabelle_priceformat;?></span>
+					<?php
+						if(count($preis_jahr)>0 && $preis_jahr!=0){
+						echo'<p class="jahr">';
+							for($x=0; $x<count($preis_jahr); $x++){
+								echo'<span data-jahr="'. $preis_jahr[$x] .'" class="'; if($preis_jahr_standard == $x)echo'active'; echo'">'. $preis_jahr[$x] .'</span>';
+								
+								if($x+1<count($preis_jahr))
+									echo' / ';
+							}
+						echo'</p>';
+						}
+					?>
+				</td>
+				
+				
+				<?php
+					for($x=0; $x<4; $x++){
+						?>
+						
+						<td>
+							<p class="monate"><?php echo $buchbarkeit_s[$x]; ?></p>
+							<p class="arrangement_vorteil">
+							<?php
+								if($_SESSION["cms_lang"] == "ger"){
+									echo 'Arr.-Vorteil ab '.$dauer[$x].' Tage';
+								}
+								if($_SESSION["cms_lang"] == "eng"){
+									echo 'arr.-adv. ('.$dauer[$x].'+ days)';
+								}
+							?>
+							</p>
+							EUR
+						</td>
+						
+						<?php
+					}
+				?>
+				
+			</tr>
+			
+			<?php
+				
+				$anzahl_zimmer = count($zimmername);
+				
+				for($x=0; $x<$anzahl_zimmer; $x++){
+					
+					echo'
+						<tr data-info="'.$zimmervar[$x].'">
+							<td class="left_col" data-info="preistabelle_button">
+								<p>'.$zimmername[$x].'</p>';
+								
+								if($_SESSION["cms_lang"] == "ger"){
+									echo '- mit Arrangement-Vorteil';
+								}
+								if($_SESSION["cms_lang"] == "eng"){
+									echo '- with arr.-advantage';
+								}
+							
+							echo'
+							</td>
+						';
+						
+						for($y=0; $y<$anzahl_arr; $y++){
+						
+							echo'
+								<td>
+								';
+								
+								for($z=0; $z<count(${$zimmervar[$x]."_".($y+1)}); $z++){	
+									echo'
+										<p class="preise '; if($preis_jahr_standard == $z)echo'active'; echo'" data-jahr="'. $preis_jahr[$z] .'">'. preis_format(${$zimmervar[$x]."_".($y+1)}[$z] + $kosten_hp[$z]) .'</p>
+										<p class="preise '; if($preis_jahr_standard == $z)echo'active'; echo'" data-jahr="'. $preis_jahr[$z] .'">'. preis_format(${$zimmervar[$x]."_".($y+1)."a"}[$z]) .'</p>
+									';
+								}
+								echo'
+								</td>
+								';
+						}
+							
+						echo'
+						</tr>
+					';
+				}
+			?>
+			
+		</table>
+		
+		<div class="preistabelle_bottom">
+			<table><tr>
+			<td class="anfrage">
+				<a href="anfrage-kuehlungsborn-ostsee.html"><span data-cmstype="text_short" data-cmspos="preistabelle_anfrage"><?=$preistabelle_anfrage;?></span></a><br>
+			</td>
+			<td>
+				<p>
+					<a href="javascript:buchungsinformationen()"><span data-cmstype="text_short" data-cmspos="preistabelle_buchungsinfo"><?=$preistabelle_buchungsinfo;?></span></a><br>
+					<a href="kontakt-und-anreise-kuehlungsborn-ostsee.html"><span data-cmstype="text_short" data-cmspos="preistabelle_kontakt"><?=$preistabelle_kontakt;?></span></a>
+				</p>		
+			</td>
+			</tr></table>
+		</div>
+		
+		<div class="close" onclick="preistabelle_schliessen()"><span data-cmstype="text_short" data-cmspos="preistabelle_close"><?=$preistabelle_close;?></span></div>
+	</div>
+
+
+
+	<!-- Übernachtung/Frühstück -->
+
+
+	<div id="uf" class="preistabelle" data-info="closed">
+
+		<table>
+			<tr class="table_head">
+				<td class="left_col">
+					<p class="title" data-cmstype="text_short" data-cmspos="preistabelle_uf"><?=$preistabelle_uf;?></p>
+					<span data-cmstype="text_short" data-cmspos="preistabelle_priceformat"><?=$preistabelle_priceformat;?></span>
+					<?php
+						if(count($preis_jahr)>0 && $preis_jahr!=0){
+						echo'<p class="jahr">';
+							for($x=0; $x<count($preis_jahr); $x++){	
+								echo'<span data-jahr="'. $preis_jahr[$x] .'" class="'; if($preis_jahr_standard == $x)echo'active'; echo'">'. $preis_jahr[$x] .'</span>';
+								
+								if($x+1<count($preis_jahr))
+									echo' / ';
+							}
+						echo'</p>';
+						}
+					?>
+				</td>
+				<td>
+					<p class="monate"><?php echo $buchbarkeit_s[0]; ?></p>
+					EUR
+				</td>
+				<td>
+					<p class="monate"><?php echo $buchbarkeit_s[1]; ?></p>
+					EUR
+				</td>
+				<td>
+					<p class="monate"><?php echo $buchbarkeit_s[2]; ?></p>
+					EUR
+				</td>
+				<td>
+					<p class="monate"><?php echo $buchbarkeit_s[3]; ?></p>
+					EUR
+				</td>
+			</tr>
+			
+			<?php
+				
+				$anzahl_zimmer = count($zimmername);
+				
+				for($x=0; $x<$anzahl_zimmer; $x++){
+					
+					echo'
+						<tr data-info="'.$zimmervar[$x].'">
+							<td class="left_col" data-info="preistabelle_button">
+								<p>'.$zimmername[$x].'</p>
+							</td>
+						';
+						
+						for($y=0; $y<$anzahl_arr; $y++){
+						
+							echo'
+							<td>
+							';
+							
+							for($z=0; $z<count(${$zimmervar[$x]."_".($y+1)}); $z++){	
+								echo'
+									<p class="preise '; if($preis_jahr_standard == $z)echo'active'; echo'" data-jahr="'. $preis_jahr[$z] .'">'. preis_format(${$zimmervar[$x]."_".($y+1)}[$z]) .'</p>
+								';
+							}
+							
+							echo'
+							</td>';
+						}
+						echo'
+						</tr>
+					';
+				}
+			?>
+			
+		</table>
+		
+		<div class="preistabelle_bottom">
+			<table><tr>
+			<td class="anfrage">
+				<a href="anfrage-kuehlungsborn-ostsee.html"><span data-cmstype="text_short" data-cmspos="preistabelle_anfrage"><?=$preistabelle_anfrage;?></span></a><br>
+			</td>
+			<td>
+				<p>
+					<a href="javascript:buchungsinformationen()"><span data-cmstype="text_short" data-cmspos="preistabelle_buchungsinfo"><?=$preistabelle_buchungsinfo;?></span></a><br>
+					<a href="kontakt-und-anreise-kuehlungsborn-ostsee.html"><span data-cmstype="text_short" data-cmspos="preistabelle_kontakt"><?=$preistabelle_kontakt;?></span></a>
+				</p>		
+			</td>
+			</tr></table>
+		</div>
+		
+		<div class="close" onclick="preistabelle_schliessen()"><span data-cmstype="text_short" data-cmspos="preistabelle_close"><?=$preistabelle_close;?></span></div>
+		
+	</div>
+</div>

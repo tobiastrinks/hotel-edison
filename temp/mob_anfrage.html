@@ -1,0 +1,466 @@
+<?php
+	$active_page = "anfrage";
+	include($home_dir."temp/html/mob_nav.html");
+?>
+
+<div id="content">
+	<div data-cmstype="wrapper" data-cmscat="Kopfzeile">
+		<h1><span data-cmstype="text_short" data-cmspos="anfrage_headline"><?=$anfrage_headline;?></span></h1>
+		
+		<div class="short_description" data-cmstype="text_short" data-cmspos="head_descr"><?=$head_descr;?></div>
+	</div>
+	
+	<?php 
+		$show_desktop_version = "";
+		
+		if(isset($_GET["showDesktopVersion"])){
+			if($_GET["showDesktopVersion"] == "true")
+				$show_desktop_version = "?showDestopVersion=true";
+		}
+	?>
+	
+	<form id="form_anfrage" method="post" action="anfrage-kuehlungsborn-ostsee-submit.html<?php echo $show_desktop_version; ?>">
+	
+	<div id="buchungsanfrage">
+		<dl>
+			
+			<div data-cmstype="wrapper" data-cmscat="Buchungstyp">
+			
+				<dt class="anfrage_head" data-info="buchungstyp">
+					<img src="<?=$temp_basic_dir;?>zimmer_sonne_symbol1.png" width="50" alt="sonne_icon" />
+					<img class="sonne" src="<?=$temp_basic_dir;?>zimmer_sonne_symbol2.png" width="50" alt="sonne_icon" />
+					<a class="closed"><span data-cmstype="text_short" data-cmspos="cms_buchungstyp"><?=$cms_buchungstyp;?></span></a>
+				</dt>
+				
+				<dd data-info="buchungstyp">
+				
+					<input type="radio" name="buchungstyp" value="uf" id="uf" class="buchungstyp_input" required><label for="uf"><span data-cmstype="text_short" data-cmspos="cms_uf"><?=$cms_uf;?></span></label><br />
+					<input type="radio" name="buchungstyp" value="hp" id="hp" class="buchungstyp_input"><label for="hp"><span data-cmstype="text_short" data-cmspos="cms_hp"><?=$cms_hp;?></span></label><br />
+					<input type="radio" name="buchungstyp" value="arr" id="arr" class="buchungstyp_input"><label for="arr"><span data-cmstype="text_short" data-cmspos="cms_arr"><?=$cms_arr;?></span></label><br />
+				
+					<p class="weiter"><a><span data-cmstype="text_short" data-cmspos="cms_weiter"><?=$cms_weiter;?></span></a></p>
+				</dd>
+			</div>
+			
+			<div data-cmstype="wrapper" data-cmscat="Reisezeitraum">
+				<dt class="anfrage_head" data-info="reisezeitraum">
+					<img src="<?=$temp_basic_dir;?>zimmer_sonne_symbol1.png" width="50" alt="sonne_icon" />
+					<img class="sonne" src="<?=$temp_basic_dir;?>zimmer_sonne_symbol2.png" width="50" alt="sonne_icon" />
+					<a class="closed"><span data-cmstype="text_short" data-cmspos="cms_reisezeitraum"><?=$cms_reisezeitraum;?></span></a>
+				</dt>
+				
+				<dd data-info="reisezeitraum">
+					
+					<div class="reisezeitraum_cols">
+						<table>
+							<tr>
+								<td><label for="anreise"><span data-cmstype="text_short" data-cmspos="cms_anreise"><?=$cms_anreise;?></span> </label></td><td><input type="text" class="datepicker" id="anreise" name="anreise" readonly></td>
+							</tr>
+							<tr id="abreise_change">
+								<td><label for="abreise1"><span data-cmstype="text_short" data-cmspos="cms_abreise"><?=$cms_abreise;?></span> </label></td><td><input type="text" class="datepicker" id="abreise1" name="abreise1" readonly></td>
+							</tr>
+							<tr class="abreise_arr">
+								<td><label for="abreise2"><span data-cmstype="text_short" data-cmspos="cms_abreise"><?=$cms_abreise;?></span> </label></td><td><input type="text" id="abreise2" name="abreise2" readonly><br />
+								<span id="arr_verl"><span id="prev_verl" class="arr_verl_button">&lt;</span> <span data-cmstype="text_short" data-cmspos="cms_verlaengern"><?=$cms_verlaengern;?></span> <span id="next_verl" class="arr_verl_button">&gt;</span></span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="reisezeitraum_cols">
+						<div id="feiertag_info" class="info_arr_content">
+						
+							<div class="abreise_arr_body">
+							
+							
+								<?php
+									
+									$angebote_anzahl = count($reihenfolge);
+									
+									for($y=$anzahl_arr; $y<$angebote_anzahl; $y++){
+										
+										$y1 = $reihenfolge[$y]-1;
+										
+										if($visibility[$y1] == 1){
+											?>
+												<div class="feiertag_info_c">
+													<strong><?=$anfrage_name[$y1-$anzahl_arr];?></strong><br />
+											<?php
+											
+											$datum_ausgabe		= $buchbarkeit[$y1];
+											
+											$datum_cache = str_replace("/", "",$datum_ausgabe);
+											$datum_cache_laenge	= strlen($datum_cache);
+											
+											$datum_ausgabe = "";
+											
+											
+											for($z=0; $z<$datum_cache_laenge; $z=$z+10){
+											
+												$start_date = substr( $datum_cache, $z , 10);
+												
+												$start_date = explode(".",$start_date);
+												$start_date = mktime( 4,0,0, $start_date[1], $start_date[0], $start_date[2] );
+											
+												$end_date	= $start_date+(60*60*24*$dauer[$y1]);
+												
+												if($_SESSION["cms_lang"] == "ger")
+													$datum_ausgabe = $datum_ausgabe . date("d.m.Y", $start_date) . " bis " . date("d.m.Y", $end_date);
+											
+												if($_SESSION["cms_lang"] == "eng")
+													$datum_ausgabe = $datum_ausgabe . date("d.m.Y", $start_date) . " to " . date("d.m.Y", $end_date);
+												
+												echo'
+													<span class="feiertag_select">'.$datum_ausgabe.'</span>
+												';
+												
+											}
+											
+											echo'</div>';
+											
+										}
+									}
+								?>
+								
+							</div>
+							
+						</div>
+					</div>
+					
+					<div class="clear"></div>
+					
+					<div class="abreise_arr" data-info="info_arr">
+						
+						<h2><span data-cmstype="text_short" data-cmspos="cms_angebot_gewaehlt"><?=$cms_angebot_gewaehlt;?></span></h2>
+						
+						
+						<?php
+							
+							for($x = 0; $x < count($reihenfolge) ; $x++){
+								
+								echo'
+								
+								<style>
+								
+									#'.$img_name[$x].' .abreise_arr_head{
+										background-color: '.$bg_farbe[$x].';
+									}
+								
+								</style>
+									
+									<div id="'.$img_name[$x].'" class="info_arr_content">
+										
+										<span class="hide">
+											<span class="buchbarkeit">'.$buchbarkeit[$x].'</span>
+											<span class="dauer">'.$dauer[$x].'</span>
+											<span class="verlaengerbar">'.$verlaengerbar[$x].'</span>
+										</span>
+										
+										<div class="abreise_arr_head">	
+											<span>'.$headline[$x].'</span><br />
+											<span>'.$subheadline[$x].'</span>
+										</div>
+										<div class="abreise_arr_body">
+											<ul>
+												'.$beschreibung[$x].'
+											</ul>
+										</div>
+										
+									</div>
+									
+								';
+								
+							}
+						
+						?>
+						
+					</div>
+					
+					<p class="weiter"><a><span data-cmstype="text_short" data-cmspos="cms_weiter"><?=$cms_weiter;?></span></a></p>
+				</dd>
+			</div>	
+				
+			<div data-cmstype="wrapper" data-cmscat="Zimmertyp">	
+				<dt class="anfrage_head" data-info="zimmertyp">
+					<img src="<?=$temp_basic_dir;?>zimmer_sonne_symbol1.png" width="50" alt="sonne_icon" />
+					<img class="sonne" src="<?=$temp_basic_dir;?>zimmer_sonne_symbol2.png" width="50" alt="sonne_icon" />
+					<a class="closed"><span data-cmstype="text_short" data-cmspos="cms_zimmertyp"><?=$cms_zimmertyp;?></span></a>
+				</dt>
+				
+				<dd data-info="zimmertyp">
+				
+					<input type="radio" name="zimmertyp" value="doppel_classic" id="doppel_classic_radio" class="zimmertyp_input">				<label for="doppel_classic_radio"> <?=$zimmername[0];?></label><br />
+					<input type="radio" name="zimmertyp" value="doppel_classic_plus" id="doppel_classic_plus_radio" class="zimmertyp_input">	<label for="doppel_classic_plus_radio"> <?=$zimmername[1];?></label><br />
+					<input type="radio" name="zimmertyp" value="doppel_comfort" id="doppel_comfort_radio" class="zimmertyp_input">				<label for="doppel_comfort_radio"> <?=$zimmername[2];?></label><br />
+					<input type="radio" name="zimmertyp" value="doppel_comfort_plus" id="doppel_comfort_plus_radio" class="zimmertyp_input">	<label for="doppel_comfort_plus_radio"> <?=$zimmername[3];?></label><br />
+					<input type="radio" name="zimmertyp" value="junior_app" id="junior_app_radio" class="zimmertyp_input">						<label for="junior_app_radio"> <?=$zimmername[4];?></label><br />
+					<input type="radio" name="zimmertyp" value="senior_app" id="senior_app_radio" class="zimmertyp_input">						<label for="senior_app_radio"> <?=$zimmername[5];?></label><br />
+					<input type="radio" name="zimmertyp" value="suite" id="suite_radio" class="zimmertyp_input">								<label for="suite_radio"> <?=$zimmername[6];?></label><br />
+					
+					<div class="zimmerbilder_container">
+						<?php
+							$zimmer_var = Array("doppel_classic", "doppel_classic_plus", "doppel_comfort", "doppel_comfort_plus", "junior_app", "senior_app", "suite");
+
+							for($x=0; $x<6; $x++){
+						?>
+							<div class="zimmerbilder" id="<?=$zimmer_var[$x];?>" data-info="closed" data-cmstype="img_dia" data-cmspos="<?=$zimmer_var[$x];?>_img" data-cmsglobal="1"><?php cms_load_dia($zimmer_var[$x]."_img", 600, 0); ?></div>
+						<?php
+							}
+						?>
+					</div>
+					
+					<p class="weiter"><a><span data-cmstype="text_short" data-cmspos="cms_weiter"><?=$cms_weiter;?></span></a></p>
+				</dd>
+			</div>
+				
+			<div data-cmstype="wrapper" data-cmscat="Reiseteilnehmer">	
+			
+				<dt class="anfrage_head" data-info="reiseteilnehmer">
+					<img src="<?=$temp_basic_dir;?>zimmer_sonne_symbol1.png" width="50" alt="sonne_icon" />
+					<img class="sonne" src="<?=$temp_basic_dir;?>zimmer_sonne_symbol2.png" width="50" alt="sonne_icon" />
+					<a class="closed"><span data-cmstype="text_short" data-cmspos="cms_reiseteilnehmer"><?=$cms_reiseteilnehmer;?></span></a>
+				</dt>
+				
+				<dd data-info="reiseteilnehmer">
+					<table>
+						<tr>
+							<td><label for="erw"><span data-cmstype="text_short" data-cmspos="cms_reiseteilnehmer_erw"><?=$cms_reiseteilnehmer_erw;?></span></label></td>			
+							
+							<td>
+								<select name="reiseteilnehmer_erw" id="erw" class="reiseteilnehmer_input">
+									<option value="1">1</option>
+									<option value="2" selected>2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="kin_0_3"><span data-cmstype="text_short" data-cmspos="cms_reiseteilnehmer_kin_0_3"><?=$cms_reiseteilnehmer_kin_0_3;?></span></label></td>
+							<td>
+								<select name="reiseteilnehmer_kin_0_3" id="kin_0_3" class="reiseteilnehmer_input">
+									<option value="0" selected>0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="kin_4_6"><span data-cmstype="text_short" data-cmspos="cms_reiseteilnehmer_kin_4_6"><?=$cms_reiseteilnehmer_kin_4_6;?></span></label></td>
+							<td>
+								<select name="reiseteilnehmer_kin_4_6" id="kin_4_6" class="reiseteilnehmer_input">
+									<option value="0" selected>0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="kin_7_12"><span data-cmstype="text_short" data-cmspos="cms_reiseteilnehmer_kin_7_12"><?=$cms_reiseteilnehmer_kin_7_12;?></span></label></td>
+							<td>
+								<select name="reiseteilnehmer_kin_7_12" id="kin_7_12" class="reiseteilnehmer_input">
+									<option value="0" selected>0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<p class="weiter"><a><span data-cmstype="text_short" data-cmspos="cms_weiter"><?=$cms_weiter;?></span></a></p>
+				</dd>
+			</div>
+				
+			<div data-cmstype="wrapper" data-cmscat="Zusatzleistungen">		
+			
+				<dt class="anfrage_head" data-info="zusatzleistungen">
+					<img src="<?=$temp_basic_dir;?>zimmer_sonne_symbol1.png" width="50" alt="sonne_icon" />
+					<img class="sonne" src="<?=$temp_basic_dir;?>zimmer_sonne_symbol2.png" width="50" alt="sonne_icon" />
+					<a class="closed"><span data-cmstype="text_short" data-cmspos="cms_zusatzleistungen"><?=$cms_zusatzleistungen;?></span></a>
+				</dt>
+			
+				<dd data-info="zusatzleistungen">
+				
+					<input type="checkbox" name="zusatzleistungen_gar" id="garage" class="zusatzleistungen_input" value="ja">			<label for="garage"> <span data-cmstype="text_short" data-cmspos="cms_zusatzleistungen_stellplatz"><?=$cms_zusatzleistungen_stellplatz;?></span></label><br />
+					<input type="checkbox" name="zusatzleistungen_haustier" id="haustier" class="zusatzleistungen_input" value="ja">	<label for="haustier"> <span data-cmstype="text_short" data-cmspos="cms_zusatzleistungen_haustier"><?=$cms_zusatzleistungen_haustier;?></span></label><br />
+					
+					<p class="weiter"><a><span data-cmstype="text_short" data-cmspos="cms_weiter"><?=$cms_weiter;?></span></a></p>
+				</dd>
+			</div>	
+				
+			<div data-cmstype="wrapper" data-cmscat="Anmerkungen">	
+				<dt class="anfrage_head" data-info="anmerkungen">
+					<img src="<?=$temp_basic_dir;?>zimmer_sonne_symbol1.png" width="50" alt="sonne_icon" />
+					<img class="sonne" src="<?=$temp_basic_dir;?>zimmer_sonne_symbol2.png" width="50" alt="sonne_icon" />
+					<a class="closed"><span data-cmstype="text_short" data-cmspos="cms_anmerkungen"><?=$cms_anmerkungen;?></span></a>
+				</dt>
+				
+				<dd data-info="anmerkungen">
+				
+					<textarea rows="3" name="anmerkungen" id="anmerkungen"></textarea>
+					
+					<p class="weiter"><a><span data-cmstype="text_short" data-cmspos="cms_weiter"><?=$cms_weiter;?></span></a></p>
+				</dd>
+			</div>
+				
+			<div data-cmstype="wrapper" data-cmscat="Zusammenfassung">	
+				<dt class="anfrage_head" data-info="zusammenfassung">
+					<img src="<?=$temp_basic_dir;?>zimmer_sonne_symbol1.png" width="50" alt="sonne_icon" />
+					<img class="sonne" src="<?=$temp_basic_dir;?>zimmer_sonne_symbol2.png" width="50" alt="sonne_icon" />
+					<a class="closed"><span data-cmstype="text_short" data-cmspos="cms_zsf"><?=$cms_zsf;?></span></a>
+				</dt>
+				
+				<dd data-info="zusammenfassung">
+					
+					<div id="zsf_table">
+					
+					<h2><span data-cmstype="text_short" data-cmspos="cms_zsf_headline"><?=$cms_zsf_headline;?></span></h2>
+					
+						<table>
+							<tr>
+								<td class="kriterien">
+									<span data-cmstype="text_short" data-cmspos="cms_buchungstyp"><?=$cms_buchungstyp;?></span>
+								</td>
+								<td id="zsf_buchungstyp">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="kriterien">
+									<span data-cmstype="text_short" data-cmspos="cms_reisezeitraum"><?=$cms_reisezeitraum;?></span>
+								</td>
+								<td id="zsf_reisezeitraum">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="kriterien">
+									<span data-cmstype="text_short" data-cmspos="cms_zimmertyp"><?=$cms_zimmertyp;?></span>
+								</td>
+								<td id="zsf_zimmertyp">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="kriterien">
+									<span data-cmstype="text_short" data-cmspos="cms_reiseteilnehmer"><?=$cms_reiseteilnehmer;?></span>
+								</td>
+								<td id="zsf_reiseteilnehmer">
+									<p id="zsf_reiseteilnehmer_erw"></p>
+									<p id="zsf_reiseteilnehmer_kin_0_3"></p>
+									<p id="zsf_reiseteilnehmer_kin_4_6"></p>
+									<p id="zsf_reiseteilnehmer_kin_7_12"></p>
+								</td>
+							</tr>
+							<tr>
+								<td class="kriterien">
+									<span data-cmstype="text_short" data-cmspos="cms_zusatzleistungen"><?=$cms_zusatzleistungen;?></span>
+								</td>
+								<td id="zsf_zusatzleistungen">
+									<p id="zsf_zusatzleistungen_garage"></p>
+									<p id="zsf_zusatzleistungen_haustier"></p>
+									<p id="zsf_zusatzleistungen_keine"><span data-cmstype="text_short" data-cmspos="cms_keine"><?=$cms_keine;?></span></p>
+								</td>
+							</tr>
+							<tr>
+								<td class="kriterien">
+									<span data-cmstype="text_short" data-cmspos="cms_anmerkungen"><?=$cms_anmerkungen;?></span>
+								</td>
+								<td id="zsf_anmerkungen">
+									<span data-cmstype="text_short" data-cmspos="cms_keine"><?=$cms_keine;?></span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					
+					<div id="anfragen">
+						
+						<h2><span data-cmstype="text_short" data-cmspos="cms_pers_daten"><?=$cms_pers_daten;?></span></h2>
+						
+						<table>
+							<tr>
+								<td>
+									<label><span data-cmstype="text_short" data-cmspos="cms_pers_daten_anr"><?=$cms_pers_daten_anr;?></span> </label>
+								</td>
+								<td>
+									<input type="radio" name="anrede" id="herr" value="Herr" required><label for="herr"> <span data-cmstype="text_short" data-cmspos="cms_pers_daten_anr_hr"><?=$cms_pers_daten_anr_hr;?></span></label>
+									
+									<input type="radio" name="anrede" id="frau" value="Frau"><label for="frau"> <span data-cmstype="text_short" data-cmspos="cms_pers_daten_anr_fr"><?=$cms_pers_daten_anr_fr;?></span></label>
+								</td>
+							</tr>
+							<tr>
+								<td><label for="vname"><span data-cmstype="text_short" data-cmspos="cms_pers_daten_vname"><?=$cms_pers_daten_vname;?></span> </label></td>		<td><input type="text" name="vname" id="vname" required /></td>
+							</tr>
+							
+							<tr class="border_bottom">
+								<td><label for="nname"><span data-cmstype="text_short" data-cmspos="cms_pers_daten_nname"><?=$cms_pers_daten_nname;?></span> </label></td>		<td><input type="text" name="nname" id="nname" required /></td>
+							</tr>
+							
+							<tr>
+								<td><label for="strasse"><span data-cmstype="text_short" data-cmspos="cms_pers_daten_str"><?=$cms_pers_daten_str;?></span> </label></td><td><input type="text" name="strasse" id="strasse" required /> / <input type="text" name="strasse_nr" id="strasse_nr" size="6" required /></td>
+							</tr>
+							
+							<tr>
+								<td><label for="plz"><span data-cmstype="text_short" data-cmspos="cms_pers_daten_ort"><?=$cms_pers_daten_ort;?></span> </label></td>		<td><input type="text" name="plz" id="plz" size="6" required /> / <input type="text" name="ort" id="ort" required /></td>
+							</tr> 
+							
+							<tr class="border_bottom">
+								<td><label for="land"><span data-cmstype="text_short" data-cmspos="cms_pers_daten_land"><?=$cms_pers_daten_land;?></span> </label></td>			<td><input type="text" name="land" id="land" value="Deutschland" required /></td>
+							</tr>
+							
+							<tr>
+								<td><label for="email"><span data-cmstype="text_short" data-cmspos="cms_pers_daten_email"><?=$cms_pers_daten_email;?></span> </label></td>		<td><input type="email" name="email" id="email" required /></td>
+							</tr>
+							
+							<tr class="border_bottom">
+								<td><label for="telefon_anfrage"><span data-cmstype="text_short" data-cmspos="cms_pers_daten_tel"><?=$cms_pers_daten_tel;?></span> </label></td>		<td><input type="text" name="telefon" id="telefon_anfrage" /></td>
+							</tr>
+							
+						</table>
+						
+						<button type="submit"><span data-cmstype="text_short" data-cmspos="cms_anfragen_button"><?=$cms_anfragen_button;?></span></button>
+						
+						<p id="submit_telefon"><span data-cmstype="text_short" data-cmspos="cms_anfragen_tel"><?=$cms_anfragen_tel;?></span><i class="fa fa-phone" aria-hidden="true"></i> <strong>038293 / 42-0</strong></p>
+						
+					</div>
+					
+				</dd>
+			</div>
+			
+		</dl>
+		
+	
+	</div>
+	
+	</form>
+	
+	
+</div>
+
+<div id="footer">
+	<?php include($home_dir."temp/html/mob_footer.html");?>			
+</div>

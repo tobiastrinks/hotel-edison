@@ -1,0 +1,43 @@
+table tr td{
+	padding-right: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	vertical-align: top;
+}
+
+#hotel a{
+	color: #00c4d0;
+}
+
+#saisonkalender_restaurant{
+	margin-top: 10px;
+}
+#saisonkalender_restaurant td{
+	vertical-align: top;
+	padding: 5px;
+	border-bottom: 1px dotted #dcd197;
+}
+#saisonkalender_restaurant tr td:first-child{
+	padding-left: 0px;
+}
+
+
+.ausflugstipps_kontakt{
+	margin-top: 20px;
+}
+.ausflugstipps_kontakt > div{
+	float: left;
+	margin-right: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#veranstaltungen_kuehlungsborn{
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+#veranstaltungen_kuehlungsborn tr:first-child{
+	font-weight: bold;
+}
+#veranstaltungen_kuehlungsborn td{
+	border-bottom: 1px solid #dcd197;
+}

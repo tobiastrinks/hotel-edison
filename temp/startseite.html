@@ -1,0 +1,93 @@
+<?php include($home_dir."temp/html/nav.html"); ?>
+	
+<div id="content">
+
+	<i class="fa fa-angle-double-up" data-info="button_content" aria-hidden="true"></i>
+	
+	<div id="content_left" class="closed" data-cmstype="wrapper" data-cmscat="Informationen">
+	
+		<h1><span data-cmstype="text_short" data-cmspos="headline"><?=$headline;?></span></h1>
+		
+		<div class="clear"></div>
+		<div id="index_nav">
+		
+				<div class="index_nav_img_wrapper index_nav_element">
+					<a href="hotel-edison-kuehlungsborn-ostsee.html">
+						<div id="index_nav_hotel" class="index_nav_img" data-cmstype="img" data-cmspos="nav_img1" data-cms_img_align="cover_center"><?php cms_load_img($nav_img1, 0, 0, ""); ?></div>
+						<p class="index_nav_descr" data-cmstype="text_short" data-cmspos="nav_img1_descr"><?=$nav_img1_descr;?></p>
+					</a>
+				</div>
+				
+				<div class="description_article index_nav_element">
+					<div data-cmstype="text_long" data-cmspos="main_descr"><?=$main_descr;?></div>
+				</div>
+				
+				<div class="index_nav_img_wrapper index_nav_element">
+					<a href="zimmer-und-preise-hotel-edison-kuehlungsborn-ostsee.html">
+						<div id="index_nav_zimmer" class="index_nav_img" data-cmstype="img" data-cmspos="nav_img2" data-cms_img_align="cover_center"><?php cms_load_img($nav_img2, 0, 0, ""); ?></div>
+						<p class="index_nav_descr" data-cmstype="text_short" data-cmspos="nav_img2_descr"><?=$nav_img2_descr;?></p>
+					</a>
+				</div>
+				
+				<div class="clear"></div>
+		</div>
+		
+		<div class="clear"></div>
+		
+		
+	</div>
+	
+	<div id="home_dia_next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+	<div id="home_dia_prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+	
+	<div id="footer">
+		<?php include($home_dir."temp/html/footer.html"); ?>
+	</div>
+	
+</div>	
+
+<?php
+	if (isset($_GET["angebot"])) {
+		if ($_GET["angebot"] == "zimmer") {
+?>
+		<div class="angebot small">
+			<div class="angebot-line"></div>
+			<div class="angebot-content">
+				<div class="angebot-content-head">
+					<div class="angebot-content-head-text" data-cmstype="text_long" data-cmspos="angebot_zimmer_headline"><?=$angebot_zimmer_headline;?></div>
+					<div class="angebot-content-head-line"></div>
+				</div>
+				<div class="angebot-content-action">
+					<div class="angebot-content-action-button" data-cmstype="text_long" data-cmspos="angebot_zimmer_button_submit" onclick="window.location='zimmer-und-preise-hotel-edison-kuehlungsborn-ostsee.html?z=doppel_comfort_plus'"><?=$angebot_zimmer_button_submit;?></div>
+					<div class="angebot-content-action-button transparent" data-cmstype="text_long" data-cmspos="angebot_zimmer_button_back" onclick="window.location='/'"><?=$angebot_zimmer_button_back;?></div>
+				</div>
+			</div>
+		</div>
+		<div data-cmstype="wrapper" data-cmscat="Diashow-Zimmer">
+			<div id="home_dia" data-cmstype="img_dia" data-cmspos="diashow_zimmer"><?php cms_load_dia("diashow_zimmer", 0, 0); ?></div>
+		</div>
+<?php
+		}
+	} else {
+?>
+	<div class="angebot">
+		<div class="angebot-line"></div>
+		<div class="angebot-content">
+			<div class="angebot-content-head">
+				<div onclick="window.location='?angebot=zimmer'" class="angebot-content-head-text" data-cmstype="text_long" data-cmspos="angebot_zimmer_headline"><?=$angebot_zimmer_headline;?></div>
+				<div class="angebot-content-head-line"></div>
+			</div>
+			<div class="angebot-content-body">
+				<div onclick="window.location='?angebot=zimmer'" class="angebot-content-body-img" data-cmstype="img" data-cmspos="angebot_zimmer_img" data-cms_img_align="cover_center"><?php cms_load_img($angebot_zimmer_img, 360, 240, ""); ?></div>
+			</div>
+			<div class="angebot-content-action">
+				<div onclick="window.location='?angebot=zimmer'" class="angebot-content-action-button" data-cmstype="text_long" data-cmspos="angebot_zimmer_button"><?=$angebot_zimmer_button;?></div>
+			</div>
+		</div>
+	</div>
+	<div data-cmstype="wrapper" data-cmscat="Diashow">
+		<div id="home_dia" data-cmstype="img_dia" data-cmspos="diashow"><?php cms_load_dia("diashow", 0, 0); ?></div>
+	</div>
+<?php
+	}
+?>

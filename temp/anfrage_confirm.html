@@ -1,0 +1,24 @@
+<?php 
+	$active_page = "anfrage";
+	include($home_dir."temp/html/nav.html"); 
+?>
+
+<div id="content" data-cmstype="wrapper" data-cmscat="Bestätigung">
+	<div id="content_left" class="closed">
+	
+		<h1><span data-cmstype="text_short" data-cmspos="headline"><?=$headline;?></span></h1>
+		
+		<div data-cmstype="img" data-cmspos="bestaetigungsbild" id="anfrage_confirm_img" data-cms_img_align="cover_center"><?php cms_load_img($bestaetigungsbild, 0, 0, "");?></div>
+			
+		<div class="short_description" id="anfrage_confirm_text" data-cmstype="text_long" data-cmspos="bestaetigungstext"><?=$bestaetigungstext;?></div>
+		
+	</div>
+</div>
+
+<div id="wrapper_bg" data-cmstype="wrapper" data-cmscat="Hintergrund">
+	<div id="wrapper_bg_element" data-cmspos="wrapper_bg_anfrage" data-cmstype="img" data-cms_img_align="cover_center" data-cmsglobal="1"><?php cms_load_img($wrapper_bg_anfrage, 0, 0, "") ?></div>
+</div>
+
+<div id="footer">
+	<?php include($home_dir."temp/html/footer.html"); ?>
+</div>

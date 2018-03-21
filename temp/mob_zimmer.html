@@ -1,0 +1,74 @@
+<?php
+	$active_page = "zimmer";
+	include($home_dir."temp/html/mob_nav.html");
+?>
+
+<div id="content">
+	
+	<h1 data-cmstype="wrapper" data-cmscat="Headline"><span data-cmspos="headline" data-cmstype="text_short"><?=$headline;?></span></h1>
+	
+	<?php include($home_dir."temp/html/mob_zimmer-und-preise-preistabelle.html"); ?>
+	
+		<dl>
+			<?php
+				$zimmer_var = Array("doppel_classic", "doppel_classic_plus", "doppel_comfort", "doppel_comfort_plus", "junior_app", "senior_app", "suite");
+				
+				for($x=0; $x<count($zimmer_var); $x++){
+			?>
+				<div data-cmstype="wrapper" data-cmscat="<?=$zimmer_var[$x];?>">
+				
+					<dt class="zimmer_head<?php if ($_GET['z'] == $zimmer_var[$x]) { ?> active<?php } ?>">
+						<img src="<?=$temp_basic_dir;?>zimmer_sonne_symbol1.png" width="50" alt="sonne_icon" />
+						<img class="sonne" src="<?=$temp_basic_dir;?>zimmer_sonne_symbol2.png" width="50" alt="sonne_icon" />
+						<a class="closed"><?=$zimmername[$x];?></a>
+						<?php
+							if ($zimmernew[$x]) {
+						?>
+							<div class="zimmer_head_new">
+								<div class="zimmer_head_new_text" data-cmstype="text_long" data-cmspos="zimmer_label_new" data-cmsglobal="1"><?=$zimmer_label_new;?></div>
+							</div>
+						<?php
+							}
+						?>
+					</dt>
+					
+					<dd class="closed">
+						<div data-cmstype="text_long" data-cmspos="<?=$zimmer_var[$x];?>_descr"><?php echo ${$zimmer_var[$x]."_descr"};?></div>
+						<div class="zimmer_nav">
+							<ul>
+								<li><a class="zimmer_nav_button active" data-content="zimmerbilder_button" data-cmstype="text_short" data-cmspos="zimmerbilder_button"><?=$zimmerbilder_button;?></a></li>
+								<li><a class="zimmer_nav_button" data-content="grundriss_button" data-cmstype="text_short" data-cmspos="grundriss_button"><?=$grundriss_button;?></a></li>
+								<li><a class="zimmer_nav_button" data-content="preise_button" data-cmstype="text_short" data-cmspos="preise_button"><?=$preise_button;?></a></li>
+							</ul>
+						</div>
+						
+						<div class="zimmer_info zimmerbilder" data-cmstype="img_dia" data-cmspos="<?=$zimmer_var[$x];?>_dia"><?php cms_load_dia($zimmer_var[$x]."_dia", 500, 350); ?></div>
+							
+						<div class="zimmer_info grundriss" data-cmstype="img" data-cmspos="<?=$zimmer_var[$x];?>_grundriss"><?php cms_load_img( ${$zimmer_var[$x]."_grundriss"}, 0, 0, "");?></div>
+						
+						<div class="zimmer_info preise">
+							<?php echo ${ $zimmer_var[$x]."_preise" }; ?>
+						</div>
+						
+					</dd>
+				</div>
+			<?php 
+				}
+			?>
+			
+		</dl>
+		
+			
+		<div id="buchungsinformationen" class="dialog" data-cmstype="wrapper" data-cmscat="Buchungsinformationen">
+			<div class="content_dialog" data-cmstype="text_long" data-cmspos="buchungsinformationen"><?=$buchungsinformationen;?></div>
+			<p class="dialog_close" onclick="dialog_close()" data-cmstype="text_short" data-cmspos="buchungsinformationen_close"><?=$buchungsinformationen_close;?></p>
+		</div>
+		
+		
+		
+	
+</div>
+
+<div id="footer">
+	<?php include($home_dir."temp/html/mob_footer.html"); ?>			
+</div>

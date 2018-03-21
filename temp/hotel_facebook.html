@@ -1,0 +1,49 @@
+<?php
+	$active_page = "hotel";
+		
+	include($home_dir."temp/html/nav.html");
+?>
+
+<script>
+  window.fbAsyncInit = function() {
+	FB.init({
+	  appId      : 'your-app-id',
+	  xfbml      : true,
+	  version    : 'v2.5'
+	});
+  };
+
+  (function(d, s, id){
+	 var js, fjs = d.getElementsByTagName(s)[0];
+	 if (d.getElementById(id)) {return;}
+	 js = d.createElement(s); js.id = id;
+	 js.src = "//connect.facebook.net/en_US/sdk.js";
+	 fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<script src="//connect.facebook.net/de_DE/all.js"></script>
+
+
+<div id="content">
+	<div id="content_left" class="closed" data-style="70perc">
+	
+		<h1 data-cmstype="wrapper" data-cmscat="Überschrift"><span data-cmstype="text_short" data-cmspos="headline<?=$cms_row["ID"];?>"><?=${"headline".$cms_row["ID"]};?></span></h1>
+		
+		<div id="nav2">
+			<?php include($home_dir."temp/html/nav2.html"); ?>
+		</div>
+		
+		<div id="hotel">
+			<div class="fb-page" data-href="https://www.facebook.com/HotelEdisonKuehlungsborn" data-tabs="timeline" data-width="500" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/HotelEdisonKuehlungsborn">Facebook</a></blockquote></div></div>
+		</div>
+	
+	</div>
+</div>
+
+<div id="wrapper_bg" data-cmstype="wrapper" data-cmscat="Hintergrund">
+	<div id="wrapper_bg_element" data-cmspos="wrapper_bg_<?=$active_page;?>" data-cmstype="img" data-cmsglobal="1" data-cms_img_align="cover_center"><?php cms_load_img(${"wrapper_bg_".$active_page}, 0, 0, "") ?></div>
+</div>
+
+<div id="footer">
+	<?php include($home_dir."temp/html/footer.html"); ?>
+</div>

@@ -1,0 +1,355 @@
+<?php
+	$active_page = "zimmer";
+	include($home_dir."temp/html/mob_nav.html");
+?>
+
+<div id="content" data-cmstype="wrapper" data-cmscat="Angebote">
+
+	<h1><span data-cmstype="text_short" data-cmspos="cms_headline"><?=$cms_headline;?></span></h1>
+	
+	<?php
+		if(count($preis_jahr)>0 && $preis_jahr!=0){
+		echo'<div id="arr_short_nav_jahr" class="arr_short_nav">';?><span data-cmstype="text_short" data-cmspos="choose_year"><?=$choose_year;?></span>
+		<?php
+			for($x=0; $x<count($preis_jahr); $x++){	
+				echo'<span data-jahr="'. $preis_jahr[$x] .'" class="arr_short_nav_element '; if($preis_jahr_standard == $x)echo'active'; echo'">'. $preis_jahr[$x] .'</span>';
+				
+				if($x+1<count($preis_jahr))
+					echo' / ';
+			}
+		echo'</div>';
+		}
+	?>
+	
+	<ul id="nav_kurzurlaub">
+		<li data-info="arr"><span data-cmstype="text_short" data-cmspos="nav2_arr"><?=$nav2_arr;?></span></li>
+		<li data-info="feiertag"><span data-cmstype="text_short" data-cmspos="nav2_ft"><?=$nav2_ft;?></span></li>
+	</ul>
+	
+	<?php
+		
+		for($x = 0; $x < count($reihenfolge) ; $x++){
+		
+			$arr_nr = $reihenfolge[$x]-1;
+			
+			//Buchbarkeit Datum -> Google
+			for ($mon=0; $mon < 12; $mon++){
+			 
+				if($buchbarkeit[$arr_nr]!=str_replace($monate[$mon],"",$buchbarkeit[$arr_nr])){
+					
+					$google_mon  	= $mon+1;
+					if(sizeof($google_mon)==1) $google_mon="0".$google_mon;
+					$google_jahr 	= date("Y", time());
+					
+					$google_date_s	= explode(".", "01.".$google_mon.".".$google_jahr);
+					$google_date_s2	= mktime( 4,0,0, $google_date_s[1], $google_date_s[0], $google_date_s[2] );
+					
+					$google_date_e	= explode(".", date('t',$google_date_s2).".".$google_mon.".".$google_jahr);
+					$google_date_e2	= mktime( 4,0,0, $google_date_e[1], $google_date_e[0], $google_date_e[2] );
+					
+					
+					if(time() > $google_date_s2 and $preis_folgejahr[$arr_nr] == 1){
+						
+						$google_date_s[2] = intval($google_date_s[2])+1;
+						$google_date_e[2] = intval($google_date_e[2])+1;
+					}
+					
+					$google_date_s	= mktime( 4,0,0, $google_date_s[1], $google_date_s[0], $google_date_s[2] );
+					$google_date_e	= mktime( 4,0,0, $google_date_e[1], $google_date_e[0], $google_date_e[2] );
+					
+					$google_date_s = date("Y-m-d", $google_date_s);
+					$google_date_e = date("Y-m-d", $google_date_e);
+					
+					echo'
+						<meta itemprop="availabilityStarts" content="'. $google_date_s .'" />
+						<meta itemprop="availabilityEnds" content="'. $google_date_e .'" />
+					';
+				}
+			}
+			
+			//Preis berechnen
+			if($fixpreis[$arr_nr]=="1")
+				$dauer_sp=1; 
+			else 
+				$dauer_sp=$dauer[$arr_nr];
+			
+			
+			//Arrangements von Feiertagsangeboten abgrenzen
+			if($x == 0){
+				echo'<div id="arr" class="kurzurlaub" data-info="active">';
+			}
+			if($x == $anzahl_arr){
+				
+				echo'
+				</div>
+
+					
+				<div id="feiertag" class="kurzurlaub" data-info="closed">
+				';
+			}
+			
+			
+			//Buchbarkeit Datum berechnen -> Ausgabe
+			$monat_enthalten	= 0;
+			$datum_ausgabe		= $buchbarkeit[$arr_nr];
+			
+			for($y=0; $y<12; $y++){
+
+				if(strpos($buchbarkeit[$arr_nr],$monate[$y])!==false) //Monat als Wort vorhanden?
+					$monat_enthalten=1;
+			}
+			
+			if($monat_enthalten != 1){
+				
+				$datum_cache = str_replace("/", "",$datum_ausgabe);
+				$datum_cache_laenge	= strlen($datum_cache);
+				
+				$datum_ausgabe = "";
+				
+				
+				for($y=0; $y<$datum_cache_laenge; $y=$y+10){
+				
+					if($y>0){
+						if($_SESSION["cms_lang"] == "ger")
+							$datum_ausgabe = $datum_ausgabe . " oder <br />";
+						if($_SESSION["cms_lang"] == "eng")
+							$datum_ausgabe = $datum_ausgabe . " or <br />";
+					}
+					
+					$start_date 	= substr( $datum_cache, $y , 10);
+					$start_date 	= explode(".",$start_date);
+					$start_date	= mktime( 4,0,0, $start_date[1], $start_date[0], $start_date[2] );
+					
+					$end_date	= $start_date+(60*60*24*$dauer[$arr_nr]);
+					
+					if($_SESSION["cms_lang"] == "ger")
+						$datum_ausgabe = $datum_ausgabe . date("d.m.Y", $start_date) . " bis " . date("d.m.Y", $end_date);
+					
+					if($_SESSION["cms_lang"] == "eng")
+						$datum_ausgabe = $datum_ausgabe . date("d.m.Y", $start_date) . " to " . date("d.m.Y", $end_date);
+					
+				}
+			}
+				
+			
+			if($visibility[$arr_nr] == 1){
+				
+				echo'
+					
+					<div class="arr_box" itemscope itemtype="http://schema.org/Product" id="'.$img_name[$arr_nr].'">
+						
+						<div class="arrangements">
+						
+							
+							<div class="headline">
+								<h2 itemprop="name">'.$headline[$arr_nr].'</h2>
+								<p itemprop="alternateName">'.$datum_ausgabe.'</p>
+								
+								<div class="arr_img_container">
+									<div class="arr_img" data-cmstype="img" data-cmspos="arr_img'.$arr_nr.'" data-cmsglobal="1">'; cms_load_img( ${"arr_img".$arr_nr}, 0, 0, ""); echo '</div>
+								</div>
+								
+								<p class="arr_info_open" data-cmstype="text_short" data-cmspos="more_info">'.$more_info.'</p>
+							</div>
+							
+							<div class="arr_content" data-info="closed">
+								<p class="buchbarkeit">
+									<strong><span data-cmstype="text_short" data-cmspos="buchbarkeit_text">'.$buchbarkeit_text.'</span></strong>
+									'.$datum_ausgabe.'
+								</p>
+								
+								<div class="info">
+									
+									<ul itemprop="description">
+										'.$beschreibung[$arr_nr].'
+									</ul>
+									
+								</div>
+								
+								
+								<div itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+						
+						
+									<meta itemprop="lowprice" content="'. ${"doppel_classic_".($arr_nr+1)."a"}[$preis_jahr_standard]*$dauer_sp .'" />
+									<meta itemprop="highprice" content="'. ${"suite_".($arr_nr+1)."a"}[$preis_jahr_standard]*$dauer_sp .'" /> 
+									<meta itemprop="priceCurrency" content="EUR" />
+									
+									
+										<p class="preis_pro_person" data-cmstype="text_short" data-cmspos="preis_pro_person">'.$preis_pro_person.'</p>
+										
+									
+										<div class="preise">
+										
+											<div class="preise_cols">
+												<table>
+													<tr itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+														<td class="tabelle_zimmer" itemprop="name">
+															DZ Classic
+														</td>
+														<td class="tabelle_preise">
+															<meta itemprop="priceCurrency" content="EUR" />
+															&euro; <span itemprop="price">'; 
+																
+																for($z=0; $z<count($preis_jahr); $z++){	
+																	echo'
+																		<span class="preise_ausgabe '; if($preis_jahr_standard == $z)echo'active'; echo'" data-jahr="'. $preis_jahr[$z] .'">'. preis_format(${"doppel_classic_".($arr_nr+1)."a"}[$z]*$dauer_sp) .'</span>
+																	';
+																}
+																
+															echo'</span>
+														</td>
+													</tr>
+													<tr itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+														<td class="tabelle_zimmer" itemprop="name">
+															DZ Classic Plus
+														</td>
+														<td class="tabelle_preise">
+															<meta itemprop="priceCurrency" content="EUR" />&euro; 
+															<span itemprop="price">';
+															
+																for($z=0; $z<count($preis_jahr); $z++){	
+																	echo'
+																		<span class="preise_ausgabe '; if($preis_jahr_standard == $z)echo'active'; echo'" data-jahr="'. $preis_jahr[$z] .'">'. preis_format(${"doppel_classic_plus_".($arr_nr+1)."a"}[$z]*$dauer_sp) .'</span>
+																	';
+																}
+																
+															echo'</span>
+														</td>
+													</tr>
+													<tr itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+														<td class="tabelle_zimmer" itemprop="name">
+															DZ Comfort
+														</td>
+														<td class="tabelle_preise">
+															<meta itemprop="priceCurrency" content="EUR" />&euro; 
+															<span itemprop="price">';
+															
+																for($z=0; $z<count($preis_jahr); $z++){	
+																	echo'
+																		<span class="preise_ausgabe '; if($preis_jahr_standard == $z)echo'active'; echo'" data-jahr="'. $preis_jahr[$z] .'">'. preis_format(${"doppel_comfort_".($arr_nr+1)."a"}[$z]*$dauer_sp) .'</span>
+																	';
+																}
+																
+															echo'</span>
+														</td>
+													</tr>
+													<tr itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+														<td class="tabelle_zimmer" itemprop="name">
+															DZ Comfort Plus
+														</td>
+														<td class="tabelle_preise">
+															<meta itemprop="priceCurrency" content="EUR" />&euro;
+															<span itemprop="price">';
+
+																for($z=0; $z<count($preis_jahr); $z++){
+																	echo'
+																		<span class="preise_ausgabe '; if($preis_jahr_standard == $z)echo'active'; echo'" data-jahr="'. $preis_jahr[$z] .'">'. preis_format(${"doppel_comfort_plus_".($arr_nr+1)."a"}[$z]*$dauer_sp) .'</span>
+																	';
+																}
+
+															echo'</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+											
+											<div class="preise_cols">
+												<table>
+													<tr itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+														<td class="tabelle_zimmer" itemprop="name">
+															Junior App
+														</td>
+														<td class="tabelle_preise">
+															<meta itemprop="priceCurrency" content="EUR" />&euro; 
+															<span itemprop="price">';
+															
+																for($z=0; $z<count($preis_jahr); $z++){	
+																	echo'
+																		<span class="preise_ausgabe '; if($preis_jahr_standard == $z)echo'active'; echo'" data-jahr="'. $preis_jahr[$z] .'">'. preis_format(${"junior_app_".($arr_nr+1)."a"}[$z]*$dauer_sp) .'</span>
+																	';
+																}
+																
+															echo'</span>
+														</td>
+													</tr>
+													<tr itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+														<td class="tabelle_zimmer" itemprop="name">
+															Senior App
+														</td>
+														<td class="tabelle_preise">
+															<meta itemprop="priceCurrency" content="EUR" />&euro; 
+															<span itemprop="price">';
+															
+																for($z=0; $z<count($preis_jahr); $z++){	
+																	echo'
+																		<span class="preise_ausgabe '; if($preis_jahr_standard == $z)echo'active'; echo'" data-jahr="'. $preis_jahr[$z] .'">'. preis_format(${"senior_app_".($arr_nr+1)."a"}[$z]*$dauer_sp) .'</span>
+																	';
+																}
+																
+															echo'</span>
+														</td>
+													</tr>
+													<tr itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+														<td class="tabelle_zimmer" itemprop="name">
+															Panorama Suite
+														</td>
+														<td class="tabelle_preise">
+															<meta itemprop="priceCurrency" content="EUR" />&euro; 
+															<span itemprop="price">';
+															
+																for($z=0; $z<count($preis_jahr); $z++){	
+																	echo'
+																		<span class="preise_ausgabe '; if($preis_jahr_standard == $z)echo'active'; echo'" data-jahr="'. $preis_jahr[$z] .'">'. preis_format(${"suite_".($arr_nr+1)."a"}[$z]*$dauer_sp) .'</span>
+																	';
+																}
+																
+															echo'</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+											
+											<div class="clear"></div>
+											';
+											
+											if($x<$anzahl_arr){
+												
+												?>
+												<p class="preis_info" data-cmstype="text_short" data-cmspos="mindestbuchungsdauer"><?=$mindestbuchungsdauer;?></p>
+												<?php
+											}
+											
+											if($preis_folgejahr[$arr_nr] == "0")
+												echo '<p class="gueltigkeit" data-cmstype="text_short" data-cmspos="preis_gueltigkeit">'.$preis_gueltigkeit.'</p>';
+											
+											echo'
+											<div class="anfrage_button">
+												<a href="anfrage-kuehlungsborn-ostsee.html" data-cmstype="text_short" data-cmspos="anfragen_button">'.$anfragen_button.'</a>
+											</div>
+										</div>
+										';
+										
+										
+										echo'
+									
+								
+								</div>
+							</div>
+						</div>
+					</div>
+				';
+			}
+			
+		}
+		
+	?>
+	
+	</div>
+		
+	
+</div>
+
+<div id="footer">
+<?php include($home_dir."temp/html/mob_footer.html"); ?>
+
+</div>

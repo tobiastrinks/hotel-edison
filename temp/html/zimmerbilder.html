@@ -1,0 +1,12 @@
+<?php
+	$zimmer_var = Array("doppel_classic", "doppel_classic_plus", "doppel_comfort", "doppel_comfort_plus", "junior_app", "senior_app", "suite");
+
+	for($x=0; $x<count($zimmer_var); $x++){
+?>
+	<div class="zimmerbilder" id="<?=$zimmer_var[$x];?>" data-info="closed" data-cmstype="img_dia" data-cmspos="<?=$zimmer_var[$x];?>_img" data-cmsglobal="1"><?php cms_load_dia($zimmer_var[$x]."_img", 0, 0); ?></div>
+<?php
+	}
+?>
+
+<p id="button_left">&lt;</p>
+<p id="button_right">&gt;</p>

@@ -1,0 +1,42 @@
+<div id="nav" data-cmstype="wrapper" data-cmscat="Navigation">
+	
+	<div class="nav_element" id="nav_open">
+		<i class="fa fa-bars" aria-hidden="true"></i>
+	</div>
+	
+	<div id="nav_headline" class="nav_element"><a href="/mobile" itemprop="url"><span data-cmstype="text_short" data-cmspos="nav_headline" data-cmsglobal="1"><?=$nav_headline;?></span></a></div>
+	
+	<div class="nav_element" id="nav_telefon">
+		<a href="tel:004938293420"><i class="fa fa-phone" aria-hidden="true" id="telefon" onclick=""></i></a>
+	</div>
+	
+	<div class="clear"></div>
+	
+		
+	<div id="nav_items" class="closed" itemscope itemtype="http://schema.org/Organization">
+		
+		<ul>	
+			<li><a href="hotel-edison-kuehlungsborn-ostsee.html"><p data-cmstype="text_short" data-cmspos="nav1" data-cmsglobal="1"><?=$nav1;?></p></a></li>
+			<li><a href="zimmer-und-preise-hotel-edison-kuehlungsborn-ostsee.html"><p data-cmstype="text_short" data-cmspos="nav2" data-cmsglobal="1"><?=$nav2;?></p></a></li>
+		
+			<li><a href="kurzurlaub-angebote-fuer-ihren-urlaub-ostsee.html"><p data-cmstype="text_short" data-cmspos="nav3" data-cmsglobal="1"><?=$nav3;?></p></a></li>
+			<li><a href="kuehlungsborn-und-umgebung-ausflugstipps-kuehlungsborn-ostsee.html"><p data-cmstype="text_short" data-cmspos="nav4" data-cmsglobal="1"><?=$nav4;?></p></a></li>
+		
+			<li class="nav_kontakt"><a href="anfrage-kuehlungsborn-ostsee.html"><p>&rarr; <span data-cmstype="text_short" data-cmspos="nav5" data-cmsglobal="1"><?=$nav5;?></span></p></a></li>
+			<li class="nav_kontakt"><a href="kontakt-und-anreise-kuehlungsborn-ostsee.html"><p>&rarr; <span data-cmstype="text_short" data-cmspos="nav6" data-cmsglobal="1"><?=$nav6;?></span></p></a></li>
+			
+			<li class="nav_kontakt" id="nav_change_lang">
+				<?php
+					if($_SESSION["cms_lang"] == "eng"){
+						?><p><span class="flag-icon flag-icon-de flag-icon-squared" data-lang="ger"></span> <span data-cmstype="text_short" data-cmspos="nav_lang_ger" data-cmsglobal="1"><?=$nav_lang_ger;?></span></p><?php };
+					if($_SESSION["cms_lang"] == "ger"){
+						?><p><span data-cmstype="text_short" data-cmspos="nav_lang_eng" data-cmsglobal="1"><?=$nav_lang_eng;?></span> <span class="flag-icon flag-icon-gb flag-icon-squared" data-lang="eng"></span></p><?php };
+				?>
+			</li>
+			
+		</ul>
+			
+			
+	</div>
+	
+</div>

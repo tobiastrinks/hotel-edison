@@ -1,0 +1,62 @@
+<div data-cmstype="wrapper" data-cmscat="Navigation">
+	<div id="nav" itemscope itemtype="http://schema.org/Organization">
+	
+		<div id="nav_lang">
+			<?php
+				if($_SESSION["cms_lang"] == "eng"){
+					?><span class="flag-icon flag-icon-de flag-icon-squared nav_lang_button" title="zur deutschen Seite" data-lang="ger"></span><?php };
+				if($_SESSION["cms_lang"] == "ger"){
+					?><span class="flag-icon flag-icon-gb flag-icon-squared nav_lang_button" title="visit english page" data-lang="eng"></span><?php };
+			?>
+		</div>
+
+		
+		<ul id="nav_ul1">	
+			<li><a href="hotel-edison-kuehlungsborn-ostsee.html"<?php if ($active_page == "hotel") { ?> class="active"<?php }?>><span data-cmstype="text_short" data-cmspos="nav_1" data-cmsglobal="1"><?=$nav_1;?></span></a></li>
+			<li><a href="zimmer-und-preise-hotel-edison-kuehlungsborn-ostsee.html"<?php if ($active_page == "zimmer") { ?> class="active"<?php }?>><span data-cmstype="text_short" data-cmspos="nav_2" data-cmsglobal="1"><?=$nav_2;?></span></a></li>
+		</ul>
+		
+		<ul id="nav_ul2">
+			<li><a href="kurzurlaub-angebote-fuer-ihren-urlaub-ostsee.html"<?php if ($active_page == "kurzurlaub") { ?> class="active"<?php }?>><span data-cmstype="text_short" data-cmspos="nav_3" data-cmsglobal="1"><?=$nav_3;?></span></a></li>
+			<li><a href="kuehlungsborn-und-umgebung-kuehlungsborn-ostsee.html"<?php if ($active_page == "umgebung") { ?> class="active"<?php }?>><span data-cmstype="text_short" data-cmspos="nav_4" data-cmsglobal="1"><?=$nav_4;?></span></a></li>
+		</ul>
+		<div class="clear"></div>
+		
+		<div id="nav_logo_wrapper">
+			<a href="/" itemprop="url"><div id="nav_logo" data-cmstype="img" data-cmspos="nav_logo" data-cmsglobal="1"><?php cms_load_img($nav_logo, 0, 0, "itemprop='logo'"); ?></div></a>
+		</div>
+		
+		<a href="kontakt-und-anreise-kuehlungsborn-ostsee.html"><i class="fa fa-phone" aria-hidden="true" id="telefon"></i></a>
+		<div id="telefon_box" data-cmstype="text_short" data-cmspos="nav_telefon" data-cmsglobal="1"><?=$nav_telefon;?></div>
+		
+		<a href="anfrage-kuehlungsborn-ostsee.html"><i class="fa fa-bed" aria-hidden="true" id="anfrage"></i></a>
+		<div id="anfrage_box" data-cmstype="text_short" data-cmspos="nav_anfrage" data-cmsglobal="1"><?=$nav_anfrage;?></div>
+	</div>
+		
+	<div id="nav_bottom">
+		
+		<div class="nav_bottom_page" id="nav_bottom_page_close">
+			<i class="fa fa-times" aria-hidden="true"></i>
+		</div>
+		
+		<a href="anfrage-kuehlungsborn-ostsee.html">
+			<div class="nav_bottom_page">
+				<i class="fa fa-bed" aria-hidden="true" id="anfrage_bottom"></i>
+				<span data-cmstype="text_short" data-cmspos="nav_bottom1" data-cmsglobal="1"><?=$nav_bottom1;?></span>
+			</div>
+		</a>
+		
+		<a href="kontakt-und-anreise-kuehlungsborn-ostsee.html">
+			<div class="nav_bottom_page">
+				<i class="fa fa-phone" aria-hidden="true" id="telefon_bottom"></i>
+				<span data-cmstype="text_short" data-cmspos="nav_bottom2" data-cmsglobal="1"><?=$nav_bottom2;?></span>
+			</div>
+		</a>
+		
+		<div class="clear"></div>
+			
+	</div>
+	<div id="nav_bottom_open">
+		<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+	</div>
+</div>

@@ -1,0 +1,200 @@
+@import url(https://fonts.googleapis.com/css?family=Kalam:300);
+
+#wrapper{padding-top: 60px;}
+#content_left{
+	width: 100%;
+	max-width: 1400px;
+	padding-bottom: 50px;
+}
+
+#arr_short_nav_wrapper{
+	padding: 20px;
+	padding-left: 45px;
+	border-bottom: 1px solid #dcd197;
+}
+.arr_short_nav{
+	color: #00949c;
+	font-size: 30px;
+	float: left;
+	width: 200px;
+	text-align: left;
+}
+.arr_short_nav.active{
+	font-weight: bold;
+}
+.arr_short_nav_element:hover{
+	font-weight: bold;
+	cursor: pointer;
+}
+.arr_short_nav_element.active{
+	font-weight: bold;
+}
+#arr_short_nav_jahr{
+	padding-left: 30px;
+	margin-left: 15px;
+	color: black;
+	width: auto;
+	border-left: 2px solid #dcd197;
+}
+
+.arr_box{
+	float: left;
+	margin: 40px;
+}
+
+#feiertag{
+	display: none;
+}
+
+/* GENERAL POSITIONS*/
+
+.arrangements{
+	height: auto;
+	width: 530px;
+	border: 1px solid #d2c57f;
+	padding: 0;
+	border-radius: 10px;
+	background-color: rgba(210,197,127,0.4);
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+}
+.arrangements .headline{
+	margin: 0;
+	text-align: center;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	-moz-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+}
+.arrangements .headline h2, .arrangements .headline p{
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+.arrangements .headline h2{
+	font-size: 50px;
+	font-family: 'Kalam', cursive;
+	line-height: 40px;
+	padding-top: 18px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	-moz-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+}
+.arrangements .headline p{
+	font-size: 30px;
+	font-style: italic;
+	padding-bottom: 10px;
+}
+.arrangements .buchbarkeit{
+	font-size: 20px;
+	text-align: center;
+	margin: 0;
+	line-height: 20px;
+	padding-top: 5px;
+}
+.arrangements .info{
+	font-size: 22px;
+	line-height: 30px;
+	padding-left: 230px;
+}
+.arrangements .info li{
+	list-style-image: url(../img/icons/stern.png);
+}
+.arrangements .preise{
+	position: absolute;
+	top: 0px;
+	right: 30px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 20px;
+	color: white;
+}
+.arrangements .preise p{
+	font-style: italic;
+	padding: 3px;
+	padding-right: 10px;
+	margin: 0;
+	text-align: right;
+	border-bottom: 1px dotted white;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.arrangements .preise p:hover{
+	cursor: pointer;
+	font-weight: bold;
+}
+.arrangements .preise_app{
+	display: none;
+}
+.arrangements .preise table{
+	margin: 5px;
+	margin-top: 0;
+}
+.arrangements .preise table .tabelle_zimmer{
+	text-align: left;
+	width: 160px;
+}
+.arrangements .preise table .tabelle_preise{
+	text-align: right;
+	width: 80px;
+}
+.preise_ausgabe{
+	display: none;
+}
+.preise_ausgabe.active{
+	display: inline;
+}
+.arrangements .arr_img > span{
+	font-size: 22px;
+	font-weight: bold;
+	padding: 10px;
+	padding-left: 70px;
+}
+.anfrage_button{
+	padding: 3px;
+	font-size: 25px;
+	text-align: center;
+	text-decoration: underline;
+	border-top: 1px solid white;
+}
+.anfrage_button a{
+	color: #fff;
+}
+
+.arrangements .arr_img{
+	position: relative;
+}
+.arrangements .arr_img img{
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: -5px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+.arrangements img {
+	-webkit-border-radius: 0px 0px 10px 10px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+#gueltigkeit{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+	color: #000;
+	background-color: rgba(255,255,255,0.6);
+	font-size: 20px;
+}
+
+#preis_info{
+	text-align: center;
+	font-size: 20px;
+}

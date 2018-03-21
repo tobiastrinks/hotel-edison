@@ -1,0 +1,52 @@
+<?php 
+	$active_page = "home";
+	include($home_dir."temp/html/mob_nav.html");
+?>
+
+<div data-cmstype="wrapper" data-cmscat="Seiteninhalt">
+
+	<div id="img_slideshow" data-cmstype="img_dia" data-cmspos="diashow"><?php cms_load_dia("diashow", 960, 540); ?></div>
+
+	<div id="content">	
+
+		<div class="angebot">
+            <div class="angebot-head">
+                <div class="angebot-head-text" data-cmstype="text_long" data-cmspos="angebot_zimmer_headline" onclick="window.location='zimmer-und-preise-hotel-edison-kuehlungsborn-ostsee.html?z=doppel_comfort_plus'"><?=$angebot_zimmer_headline; ?></div>
+                <div class="angebot-head-line"></div>
+            </div>
+            <div class="angebot-body">
+                <div class="angebot-body-img" data-cmstype="img" data-cmspos="angebot_zimmer_img" onclick="window.location='zimmer-und-preise-hotel-edison-kuehlungsborn-ostsee.html?z=doppel_comfort_plus'"><?php cms_load_img($angebot_zimmer_img, 360, 200, ""); ?></div>
+            </div>
+            <div class="angebot-footer">
+                <div class="angebot-footer-button" data-cmstype="text_long" data-cmspos="angebot_zimmer_button_submit" onclick="window.location='zimmer-und-preise-hotel-edison-kuehlungsborn-ostsee.html?z=doppel_comfort_plus'"><?=$angebot_zimmer_button_submit;?></div>
+            </div>
+        </div>
+
+        <div id="index_text">
+            <h1><span data-cmspos="headline" data-cmstype="text_short"><?=$headline;?></span></h1>
+            <div class="description_article" data-cmstype="text_long" data-cmspos="article"><?=$article;?></div>
+        </div>
+
+		<div class="index_nav">
+			<a href="hotel-edison-kuehlungsborn-ostsee.html">
+			
+				<div class="index_nav_img" data-cmstype="img" data-cmspos="nav_img1"><?php cms_load_img($nav_img1, 300, 300, ""); ?></div>
+				<div class="index_nav_descr"><span data-cmstype="text_short" data-cmspos="nav_text1"><?=$nav_text1;?></span></div>
+			</a>
+		</div>
+		
+		<div class="index_nav">
+			<a href="zimmer-und-preise-hotel-edison-kuehlungsborn-ostsee.html">
+				<div class="index_nav_img" data-cmstype="img" data-cmspos="nav_img2"><?php cms_load_img($nav_img2, 300, 300, ""); ?></div>
+				<div class="index_nav_descr"><span data-cmstype="text_short" data-cmspos="nav_text2"><?=$nav_text2;?></span></div>
+			</a>
+		</div>
+		
+		<div class="clear"></div>
+		
+	</div>	
+</div>
+	
+<div id="footer">
+	<?php include($home_dir."temp/html/mob_footer.html");  ?>
+</div>

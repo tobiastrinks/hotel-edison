@@ -1,0 +1,145 @@
+h1{
+	text-align: center;
+}
+#arr_short_nav_jahr{
+	text-align: center;
+}
+#arr_short_nav_jahr span{
+	padding: 0px 10px;
+}
+#arr_short_nav_jahr span:first-child{
+	padding-left: 20px;
+}
+.arr_short_nav_element:hover{
+	font-weight: bold;
+	cursor: pointer;
+}
+.arr_short_nav_element.active{
+	font-weight: bold;
+}
+#nav_kurzurlaub{
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+	color: #00c4d0;
+}
+#nav_kurzurlaub li{
+	display: inline;
+	list-style-type: none;
+	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: underline;
+	margin-left: 0;
+}
+#nav_kurzurlaub li:first-child{
+	font-weight: bold;
+}
+#nav_kurzurlaub li:hover{
+	cursor: pointer;
+}
+
+#feiertag{
+	display: none;
+}
+
+.arr_box{
+	width: 100%;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border-radius: 10px;
+	overflow: hidden;
+	border: 1px solid #d2c57f;
+}
+.headline{
+	background-color: rgba(210,197,127,0.2);
+	width: 100%;
+	box-sizing: border-box;
+	position: relative;
+	text-align: center;
+	max-height: 300px;
+}
+.arr_img_container{
+	width: 100%;
+	position: relative;
+	height: 200px;
+	overflow: hidden;
+}
+.arr_img{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.arr_img img{
+	width: 100%;
+}
+.arr_info_open{
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+	background-color: rgba(255,255,255,0.6);
+}
+.arr_content{
+	display: none;
+	font-size: 18px;
+	background-color: rgba(210,197,127,0.2);
+}
+.buchbarkeit{
+	width: 100%;
+	margin: 0;
+	padding: 15px;
+}
+.info ul{
+	margin-left: 45px;
+}
+.info li{
+	list-style-image: url(../img/icons/stern.png);
+	margin-left: 0;
+}
+.preis_pro_person{
+	margin-left: 15px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	padding: 0;
+	font-weight: bold;
+	
+}
+.preise_cols{
+	float: left;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.preise_cols td{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.preise_cols tr td:first-child{
+	width: 150px;
+}
+.preise_ausgabe{
+	display: none;
+}
+.preise_ausgabe.active{
+	display: inline;
+}
+.preis_info{
+	padding-top: 15px;
+}
+.preis_info, .gueltigkeit{
+	padding-left: 15px;
+	font-size: 15px;
+}
+
+.anfrage_button{
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+	box-sizing: border-box;
+	background-color: rgba(0,196,208,0.2);
+	margin-top: 20px;
+}

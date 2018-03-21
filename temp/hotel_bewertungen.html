@@ -1,0 +1,46 @@
+<?php
+	$active_page = "hotel";
+		
+	include($home_dir."temp/html/nav.html");
+?>
+
+<div id="content">
+	<div id="content_left" class="closed" data-style="90perc">
+	
+		<div id="TA_certificateOfExcellence484" class="TA_certificateOfExcellence"><ul id="c9RovcfIZudJ" class="TA_links Km7AtNDQ6"><li id="1bZ67GOo8j" class="MnKCPy0dXa"><a target="_blank" href="https://www.tripadvisor.de/Hotel_Review-g198613-d1092342-Reviews-Hotel_Edison-Ostseebad_Kuhlungsborn_Mecklenburg_West_Pomerania.html"><img src="https://www.tripadvisor.de/img/cdsi/img2/awards/CoE2016_WidgetAsset-14348-2.png" alt="TripAdvisor" class="widCOEImg" id="CDSWIDCOELOGO"/></a></li></ul></div><script src="https://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=484&amp;locationId=1092342&amp;lang=de&amp;year=2016&amp;display_version=2"></script>
+		
+		<h1 data-cmstype="wrapper" data-cmscat="Überschrift"><span data-cmstype="text_short" data-cmspos="headline<?=$cms_row["ID"];?>"><?=${"headline".$cms_row["ID"]};?></span></h1>
+		
+		<div id="nav2">
+			<?php include($home_dir."temp/html/nav2.html"); ?>
+		</div>
+		
+		<div id="hotel">
+			
+			<div class="bewertung_widget">
+				<div id="TA_selfserveprop261" class="TA_selfserveprop"><ul id="pEPcgJm" class="TA_links RdyT8sYYnDWy"><li id="SPTjoYZdU" class="HNyDlNKw"><a target="_blank" href="https://www.tripadvisor.de/"><img src="https://www.tripadvisor.de/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/></a></li></ul></div><script src="https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=261&amp;locationId=1092342&amp;lang=de&amp;rating=true&amp;nreviews=4&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=true&amp;border=true&amp;display_version=2"></script>
+			</div>
+			
+			<div class="bewertung_widget">
+				<script src="https://www.holidaycheck.de/widgets?step=code&type=code&options=hotel-1-70864-de_DE-l-b-1-1-1-3-1" type="text/javascript"></script>
+				<div id="holidaycheck-widget-hotel-1-70864-de_DE-l-b-1-1-1-3-1">
+					<div id="holidaycheck_widget_placeholder-70864" style="width:120px;padding:5px;background:#0058a2;">
+						<a href="https://www.holidaycheck.de/hi/hotel-edison/e4640f41-cd43-3ae9-ab98-2af962ac4bd4">
+							<img alt="Hotels mit Hotelbewertungen bei HolidayCheck" src="https://www.holidaycheck.de/widgets/logo_xlarge.png">
+						</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	
+	</div>
+</div>
+
+<div id="wrapper_bg" data-cmstype="wrapper" data-cmscat="Hintergrund">
+	<div id="wrapper_bg_element" data-cmspos="wrapper_bg_<?=$active_page;?>" data-cmstype="img" data-cmsglobal="1" data-cms_img_align="cover_center"><?php cms_load_img(${"wrapper_bg_".$active_page}, 0, 0, "") ?></div>
+</div>
+
+<div id="footer">
+	<?php include($home_dir."temp/html/footer.html"); ?>
+</div>

@@ -1,0 +1,21 @@
+<?php include($home_dir."temp/html/mob_nav.html"); ?>
+			
+<div id="content">
+	<div id="content_left">
+		<h1 data-cmstype="wrapper" data-cmscat="Überschrift"><span data-cmstype="text_short" data-cmspos="headline<?=$cms_row["ID"];?>"><?=${"headline".$cms_row["ID"]};?></span></h1>
+		
+		<div id="informations">
+			
+			<div data-cmstype="wrapper" data-cmscat="Text">
+				<div class="description_article cms_edit" data-cmstype="text_long" data-cmspos="article<?=$cms_row["ID"];?>"><?=${"article".$cms_row["ID"]};?></div>
+			</div>
+			
+		</div>
+		
+	</div>
+
+</div>
+
+<div id="footer">
+	<?php include($home_dir."temp/html/mob_footer.html"); ?>
+</div>

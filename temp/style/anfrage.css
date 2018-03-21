@@ -1,0 +1,531 @@
+@import url(https://fonts.googleapis.com/css?family=Kalam:300);
+
+#wrapper{
+	overflow: hidden;
+}
+
+.anfrage_head:hover{
+	cursor: pointer;
+}
+
+dl{
+	margin-top: 60px;
+}
+
+dt{
+	position: relative;
+	background-color: rgba(210,197,127,0.2);
+	padding: 10px;
+	padding-right: 30px;
+	color: black;
+	margin-top: 20px;
+	border-radius: 10px;
+	height: 40px;
+}
+dt:first-child{
+	border-bottom: 1px solid #d2c57f;
+}
+dd{
+	display:none;
+	background-color: rgba(210,197,127,0.2);
+	
+	margin: 0;
+	padding: 10px 10px 10px 30px;
+	padding-top: 10px;
+	border-radius: 0 0 10px 10px;
+	font-size: 20px;
+}
+dt img{
+	position: absolute;
+	top: 4px;
+	left: 5px;
+}
+dt a{
+	position: absolute;
+	top: 11px;
+	left: 65px;
+	font-size: 25px;
+	margin: 0;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+.sonne{
+	display: none;
+	z-index: 1;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+label{
+	padding: 5px;
+	line-height: 34px;
+}
+label:hover{
+	cursor: pointer;
+}
+
+.weiter{
+	text-align: right;
+	padding: 0;
+	margin: 0;
+	margin-right: 10%;
+	font-size: 25px;
+}
+.weiter a{
+	color: black;
+	text-decoration: none;
+}
+.weiter a:hover{
+	cursor: pointer;
+	color: #019fae;
+}
+
+/*  REISEZEITRAUM  */
+dd[data-info='reisezeitraum']{
+	padding-left: 10px;
+}
+dd[data-info='reisezeitraum'] table{
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 10px;
+}
+dd[data-info='reisezeitraum'] table td{
+	padding: 5px;
+}
+dd[data-info='reisezeitraum'] table td input{
+	font-size: 20px;
+}
+.abreise_arr td{
+	vertical-align: top;
+}
+.abreise_arr input{
+	color: gray;
+}
+.abreise_arr .info_arr_content{
+	display: none;
+}
+#ui-datepicker-div {
+	display: none; 
+} 
+.ui-datepicker{
+	width: auto;
+    height: auto;
+    margin: 5px auto 0;
+    font-size: 20px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+	background-color: white;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.ui-datepicker-header{
+	position: relative;
+}
+.ui-datepicker-title {
+    text-align: center;
+	color: white;
+	font-size: 25px;
+	background-color: #019fae;
+	margin-bottom: 10px;
+}
+.ui-datepicker-prev, .ui-datepicker-next {
+	position: absolute;
+	font-size: 25px;
+	padding: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: rgba(255,255,255,0.3);
+}
+.ui-datepicker-prev{
+	left: 0px;
+	top: 0px;
+}
+.ui-datepicker-prev:hover{
+	cursor: pointer;
+	background-color: rgba(255,255,255,0.5);
+}
+.ui-datepicker-next{
+	right: 0px;
+	top: 0px;
+}
+.ui-datepicker-next:hover{
+	cursor: pointer;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.ui-datepicker a{
+	text-decoration: none;
+	color: black;
+}
+.ui-datepicker table{
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+.ui-datepicker th {
+	border-bottom: 1px solid black;
+}
+.ui-datepicker td{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.ui-datepicker-unselectable .ui-state-default {
+    color: #b4b3b3;
+}
+.ui-datepicker-unselectable:hover{
+	background-color: #d7d7d7 !important;
+	cursor: default !important;
+}
+.ui-datepicker td:hover{
+	cursor: pointer;
+	background-color: #00e3f1;
+}
+.ui-datepicker-calendar .ui-state-active {
+	font-weight: bold;
+	color: #019fae;
+}
+
+.abreise_arr[data-info='info_arr']{
+	width: 450px;
+	margin-top: 40px;
+	padding: 10px;
+}
+.abreise_arr[data-info='info_arr'] h2{
+	display: none;
+	font-size: 25px;
+	font-weight: normal;
+	margin: 0;
+	padding-top: 10px;
+	border-top: 2px solid #bca860;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #bca860;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#arr_verl{
+	display: none;
+	text-align: center;
+	width: 100%;
+	font-size: 20px;
+	padding: 3px;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.arr_verl_button{
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 10px;
+	font-weight: bold;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 20px;
+	color: #019fae;
+}
+.arr_verl_button:hover{
+	cursor: pointer;
+	background-color: #019fae;
+	color: white;
+}
+.arr_verl_button:active{
+	background-color: #00646d;
+	color: white;
+}
+.info_arr_content{
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5px;
+	border: 1px solid #bca860;
+	overflow: hidden;
+}
+.info_arr_content p{
+	padding: 0;
+	margin: 0;
+}
+.info_arr_content .abreise_arr_head{
+	color: white;
+	padding: 10px;
+	line-height: 30px;
+	text-align: center;
+}
+.info_arr_content .abreise_arr_head span:first-child{
+	font-family: 'Kalam', cursive;
+	font-size: 25px;
+}
+.info_arr_content .abreise_arr_head span:last-child{
+	font-size: 20px;
+}
+
+.info_arr_content .abreise_arr_body{
+	padding: 10px;
+	background-color: rgba(255,255,255,0.4);
+}
+.info_arr_content .abreise_arr_body li{
+	list-style-image: url(../img/icons/stern.png);
+}
+#arr_saison{
+	width: 180px;
+	font-size: 15px;
+	margin: 0;
+}
+#arr_saison_2:hover{
+	font-weight: bold;
+	cursor: pointer;
+}
+#feiertag_info{
+	display: inline-block;
+	vertical-align: middle;
+	width: 220px;
+	margin: 0;
+	background-color: transparent;
+	text-align: center;
+	border: none;
+}
+#feiertag_info .abreise_arr_head{
+	color: black;
+	font-weight: bold;
+	border-bottom: 1px solid #bca860;
+}
+#feiertag_info .abreise_arr_body{
+	padding: 5px;
+	background-color: transparent;
+}
+#feiertag_info .abreise_arr_body .feiertag_info_c{
+	margin-bottom: 5px;
+}
+#feiertag_info .abreise_arr_body .feiertag_select{
+	margin-left: 5px;
+}
+.feiertag_select:hover{
+	cursor: pointer;
+	color: #019fae;
+}
+
+
+/*  ZIMMER  */
+
+#buchungsanfrage{
+	position: relative;
+	width: 100%;
+}
+
+.zimmerbilder{
+	position: absolute;
+	top: 0;
+	right: 10%;
+	height: 100%;
+	display: none;
+	overflow: hidden;
+	background-color: transparent;
+}
+.zimmerbilder img{
+	width: 100% !important;
+	height: auto !important;
+}
+#button_left, #button_right{
+	z-index: 10;
+	position: absolute;
+	font-size: 50px;
+	background-color: rgba(255,255,255,0.6);
+	padding: 10px;
+	padding-top: 7px;
+	line-height: 23px;
+	border-radius: 70px;
+	margin: 0;
+	cursor: pointer;
+	color: gray;
+	top: 50%;
+	display: none;
+}
+#button_left{
+	left: 10px;
+}
+#button_right{
+	left: 500px;
+}
+
+
+/* REISETEILNEHMER */
+
+dd[data-info='reiseteilnehmer'] select{
+	font-size: 18px;
+	text-align: center;
+	padding: 0;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+dd[data-info='reiseteilnehmer'] select option{
+	font-size: 15px;
+}
+dd[data-info='reiseteilnehmer'] td{
+	padding-right: 20px;
+}
+
+/* ANMERKUNGEN */
+
+#anmerkungen{
+	width: 90%;
+	margin-bottom: 10px;
+}
+
+
+/* ZUSAMMENFASSUNG */
+dd[data-info='zusammenfassung']{
+	vertical-align: top;
+}
+#zsf_table{
+	border: 1px solid #c1ae69;
+	border-radius: 10px;
+	min-width: 400px;
+	width: 90%;
+	overflow: hidden;
+	vertical-align:top;
+	margin: 10px;
+}
+#zsf_table table{
+	border-collapse: collapse;
+	font-size: 18px;
+	width: 100%;
+	background-color: rgba(255,255,255,0.2);
+}
+#zsf_table table .kriterien{
+	font-weight: bold;
+}
+#zsf_table table td{
+	padding-right: 20px;
+	padding-left: 10px;
+	vertical-align: top;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-bottom: 1px solid #a79e6d;
+}
+#zsf_table table p{
+	display: none;
+	padding: 0;
+	margin: 0;
+}
+
+#anfragen h2, #zsf_table h2{
+	background-color: #c1ae69;
+	color: white;
+	font-weight: normal;
+	font-size: 30px;
+	padding: 10px;
+	margin: 0;
+}
+#anfragen{
+	border: 1px solid #c1ae69;
+	border-radius: 10px;
+	min-width: 400px;
+	width: 90%;
+	overflow: hidden;
+	vertical-align:top;
+	margin: 10px;
+	margin-top: 20px;
+}
+
+#anfragen table{
+	border-collapse: collapse;
+	font-size: 18px;
+	width: 100%;
+	background-color: rgba(255,255,255,0.2);
+}
+#anfragen table td{
+}
+#anfragen table p{
+	padding: 0;
+	margin: 0;
+}
+#anfragen .border_bottom td{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #a79e6d;
+}
+#anfragen .border_bottom + tr td{
+	padding-top: 10px;
+}
+#anfragen input{
+	padding: 1px;
+	font-size: 17px;
+}
+#anfragen label{
+	font-weight: bold;
+}
+input[name='anrede'] + label{
+	font-weight: normal !important;
+}
+#anfragen button{
+
+	text-shadow:none;
+	border:none;
+	box-shadow:none;
+	padding: 0;
+	margin: 0;
+	background: none;
+	margin: 0;
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+	background-color: #ece2c1;
+	border-bottom: 1px dotted #bba856;
+	font-weight: bold;
+	font-size: 20px;
+}
+#anfragen button:hover{
+	background-color: white;
+	cursor: pointer;
+}
+#submit_telefon{
+	margin: 0;
+	padding: 5px;
+	text-align: center;
+}
+#submit_telefon i{
+	color: white;
+	background-color: #019fae;
+	border-radius: 100px;
+	padding: 3px;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin-left: 10px;
+}
+
+#anfrage_confirm_img{
+	width: 90%;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	overflow: hidden;
+	height: 400px;
+}
+#anfrage_confirm_text{
+	text-align: center;
+	font-size: 25px;
+	padding-bottom: 20px;
+}
+#anfrage_confirm_text a{
+	color: #00949c;
+	text-decoration: none;
+}
+#anfrage_confirm_text a:hover{
+	text-decoration: underline;
+}
+#anmerkungen {
+	width: 90%;
+	max-width: 90%;
+}

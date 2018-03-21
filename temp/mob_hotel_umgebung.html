@@ -1,0 +1,24 @@
+<?php
+	if(startsWith($filename, 'hotel'))
+		$active_page = "hotel";
+	if(startsWith($filename, 'kuehlungsborn-und-umgebung'))
+		$active_page = "umgebung";
+	
+	include($home_dir."temp/html/mob_nav.html");
+?>
+
+<div id="img_slideshow" data-cmstype="img_dia" data-cmspos="diashow<?=$cms_row["ID"];?>"><?php cms_load_dia("diashow".$cms_row["ID"], 750, 350); ?></div>
+
+<div id="content" data-cmstype="wrapper" data-cmscat="Seiteninhalt">
+	
+	<div id="hotel">
+	
+		<?php include($home_dir."temp/html/mob_nav2.html"); ?>
+		
+		<div class="description_article cms_edit" data-cmstype="text_long" data-cmspos="article<?=$cms_row["ID"];?>"><?=${"article".$cms_row["ID"]};?></div>
+	</div>
+</div>
+
+<div id="footer">
+	<?php include($home_dir."temp/html/mob_footer.html"); ?>
+</div>

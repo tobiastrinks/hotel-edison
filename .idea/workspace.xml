@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="18c0eb70-f3c7-4651-a967-fd022c69bcfd" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/hea-website.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Dockerfile" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/apache2.conf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/php-timezone.ini" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/cms/admin.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/HELP-US-OUT.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/css/font-awesome.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/css/font-awesome.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/fonts/FontAwesome.otf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/animated.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/bordered-pulled.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/core.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/fixed-width.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/font-awesome.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/icons.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/larger.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/list.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/mixins.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/path.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/rotated-flipped.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/screen-reader.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/stacked.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/less/variables.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_animated.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_bordered-pulled.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_core.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_fixed-width.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_icons.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_larger.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_list.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_mixins.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_path.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_rotated-flipped.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_screen-reader.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_stacked.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/_variables.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/font_awesome/scss/font-awesome.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/jquery.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/jqueryui.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/basic/php_fct.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/control.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/control_panel.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/dbconnect.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/Thumbs.db" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/ajax-loader.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/cms_box_bg.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/empty_img.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/empty_img_dia.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/ib_hover_bg.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/logo.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/media_check_0.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/media_check_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/media_thumb_doc.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/media_thumb_pdf.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/menu_logo.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/menu_logo_old.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img/settings.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/img_op.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/inhalte_bearbeiten.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/js/basic.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/js/control_panel.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/js/cover.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/js/dropzone.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/js/edit.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/js/login.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/js/temp.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/login.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/mediathek.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/menu.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/new_project_files/.htaccess" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/new_project_files/header.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/new_project_files/robots.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/php_request/basic.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/php_request/control_panel.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/php_request/control_panel_request.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/php_request/edit.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/php_request/header.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/php_request/login.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/php_request/logout.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/php_request/tt_plugins.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/php_request/upload.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/seitenverwaltung.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/style/basic.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/style/cms.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/style/control_panel.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/style/dropzone.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/style/tinymce.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/de.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/jquery.tinymce.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/langs/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/license.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/advlist/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/anchor/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/autolink/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/autoresize/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/autosave/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/bbcode/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/charmap/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/code/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/codesample/css/prism.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/codesample/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/colorpicker/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/contextmenu/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/directionality/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-cool.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-cry.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-embarassed.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-foot-in-mouth.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-frown.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-innocent.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-kiss.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-laughing.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-money-mouth.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-sealed.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-smile.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-surprised.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-undecided.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-wink.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/img/smiley-yell.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/emoticons/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/example/dialog.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/example/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/example_dependency/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/fullpage/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/fullscreen/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/hr/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/image/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/imagetools/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/importcss/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/insertdatetime/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/layer/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/legacyoutput/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/link/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/lists/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/media/moxieplayer.swf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/media/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/nonbreaking/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/noneditable/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/pagebreak/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/paste/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/preview/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/print/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/save/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/searchreplace/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/spellchecker/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/tabfocus/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/table/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/template/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/textcolor/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/textpattern/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/visualblocks/css/visualblocks.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/visualblocks/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/visualchars/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/plugins/wordcount/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/content.inline.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/content.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/fonts/tinymce-small.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/fonts/tinymce-small.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/fonts/tinymce-small.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/fonts/tinymce-small.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/fonts/tinymce.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/fonts/tinymce.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/fonts/tinymce.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/fonts/tinymce.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/img/anchor.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/img/loader.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/img/object.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/img/trans.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/skin.ie7.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/skins/lightgray/skin.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/config/bolt/atomic.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/config/bolt/bootstrap-atomic.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/config/bolt/bootstrap-browser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/config/bolt/bootstrap-demo.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/config/bolt/bootstrap-prod.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/config/bolt/browser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/config/bolt/demo.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/config/bolt/prod.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/config/dent/depend.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/scratch/compile/bootstrap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/scratch/compile/theme.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/scratch/inline/theme.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/scratch/inline/theme.raw.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/demo/css/demo.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/demo/html/demo.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/demo/js/tinymce/inlite/Demo.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/Theme.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/alien/Arr.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/alien/Bookmark.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/alien/Unlink.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/alien/Uuid.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/core/Actions.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/core/Convert.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/core/ElementMatcher.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/core/Layout.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/core/Matcher.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/core/Measure.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/core/PredicateId.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/core/SelectionMatcher.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/core/SkinLoader.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/core/UrlType.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/file/Conversions.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/file/Picker.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/ui/Buttons.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/ui/Forms.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/ui/Panel.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/main/js/tinymce/inlite/ui/Toolbar.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/.eslintrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/atomic/alien/ArrTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/atomic/alien/UuidTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/atomic/core/ConvertTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/atomic/core/MatcherTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/atomic/core/UrlTypeTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/ThemeTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/alien/BookmarkTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/alien/UnlinkTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/core/ActionsTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/core/ElementMatcher.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/core/LayoutTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/core/MeasureTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/core/PredicateIdTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/core/SelectionMatcherTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/file/ConversionsTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/src/test/js/browser/file/SelectionMatcher.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/inlite/theme.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/themes/modern/theme.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cms/tinymce/tinymce.min.js" afterPath="" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitmodules" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitmodules">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="27" />
+    <option name="width" value="927" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="hea-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hea-website" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18c0eb70-f3c7-4651-a967-fd022c69bcfd" name="Default" comment="" />
+      <created>1522101744335</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1522101744335</updated>
+      <workItem from="1522101745474" duration="117000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="117000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32947367" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.gitmodules">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
